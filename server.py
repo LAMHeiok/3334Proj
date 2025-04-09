@@ -167,7 +167,7 @@ def download_file():
     f = Fernet(key)
     
     logging.info(f"File downloaded by user: {username}, file_id: {file_id}")
-    return jsonify({'message': 'File downloaded successfully', 'encrypted_file': f.decrypt(encrypted_file).decode()}), 200
+    return jsonify({'message': 'File downloaded successfully', 'encrypted_file': f.decrypt(file).decode()}), 200
 
 if __name__ == '__main__':
     app.run(ssl_context='adhoc')

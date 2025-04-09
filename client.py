@@ -1,48 +1,35 @@
-import requests
+from client_utils import (
+    register_user,
+    login_user,
+    upload_file,
+    download_file
+)
 import getpass
-import hashlib
 import os
-from cryptography.fernet import Fernet
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
-import base64
 
 class Client:
     def __init__(self, server_url):
         self.server_url = server_url
         self.username = None
-        self.session_key = None
 
     def register(self):
         username = input("Enter username: ")
         password = getpass.getpass("Enter password: ")
-        
-        data = {
-            'username': username,
-            'password': password
-        }
-        
-        response = requests.post(f"{self.server_url}/register", json=data)
-        if response.status_code == 200:
-            print("Registration successful!")
+        result = register_user(self.server_url, username, password)
+        if 'message' in result:
+            print(result['message'])
         else:
-            print(f"Error: {response.json().get('error')}")
+            print(f"Error: {result.get('error', 'Registration failed')}")
 
     def login(self):
         username = input("Enter username: ")
         password = getpass.getpass("Enter password: ")
-        
-        data = {
-            'username': username,
-            'password': password
-        }
-        
-        response = requests.post(f"{self.server_url}/login", json=data)
-        if response.status_code == 200:
+        result = login_user(self.server_url, username, password)
+        if 'message' in result:
             self.username = username
-            print("Login successful!")
+            print(result['message'])
         else:
-            print(f"Error: {response.json().get('error')}")
+            print(f"Error: {result.get('error', 'Login failed')}")
 
     def upload_file(self):
         if not self.username:
@@ -50,26 +37,15 @@ class Client:
             return
         
         filename = input("Enter filename: ")
-        # Read file content
-        with open(filename, 'rb') as f:
-            file_content = f.read()
+        if not os.path.exists(filename):
+            print("File not found.")
+            return
         
-        # Generate a random key for encryption
-        key = Fernet.generate_key()
-        f = Fernet(key)
-        encrypted_content = f.encrypt(file_content)
-        
-        data = {
-            'username': self.username,
-            'filename': filename,
-            'encrypted_file': encrypted_content.decode()
-        }
-        
-        response = requests.post(f"{self.server_url}/upload", json=data)
-        if response.status_code == 200:
-            print("File uploaded successfully!")
+        result = upload_file(self.server_url, self.username, filename)
+        if 'message' in result:
+            print(result['message'])
         else:
-            print(f"Error: {response.json().get('error')}")
+            print(f"Error: {result.get('error', 'Upload failed')}")
 
     def download_file(self):
         if not self.username:
@@ -77,20 +53,15 @@ class Client:
             return
         
         file_id = input("Enter file ID: ")
+        result = download_file(self.server_url, self.username, file_id)
         
-        data = {
-            'username': self.username,
-            'file_id': file_id
-        }
-        
-        response = requests.post(f"{self.server_url}/download", json=data)
-        if response.status_code == 200:
-            print("File downloaded successfully!")
-            # Save the decrypted content to a file
-            with open('downloaded_' + os.path.basename(response.json().get('filename')), 'wb') as f:
-                f.write(response.json().get('file_content'))
+        if 'content' in result:
+            filename = os.path.basename(result.get('filename', 'downloaded_file'))
+            with open(filename, 'wb') as f:
+                f.write(result['content'])
+            print(f"File saved as: {filename}")
         else:
-            print(f"Error: {response.json().get('error')}")
+            print(f"Error: {result.get('error', 'Download failed')}")
 
 def main():
     server_url = 'https://localhost:5000'

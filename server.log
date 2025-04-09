@@ -1,0 +1,6 @@
+2025-04-09 04:17:43,572 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://127.0.0.1:5000
+2025-04-09 04:17:43,572 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-09 04:18:22,963 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://127.0.0.1:5000
+2025-04-09 04:18:22,963 - INFO - [33mPress CTRL+C to quit[0m
