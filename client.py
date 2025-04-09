@@ -64,7 +64,12 @@ class Client:
             print(f"Error: {result.get('error', 'Download failed')}")
 
 def main():
-    server_url = 'https://localhost:5000'
+    # Get server hostname and port from user
+    server_host = input("Enter server hostname (default: 127.0.0.1): ") or '127.0.0.1'
+    server_port = input("Enter server port (default: 5000): ") or '5000'
+    
+    # Use HTTP for testing without SSL issues
+    server_url = f"http://{server_host}:{server_port}"
     client = Client(server_url)
     
     while True:

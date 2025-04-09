@@ -7,6 +7,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import base64
 import logging
+import argparse
 
 app = Flask(__name__)
 
@@ -16,7 +17,7 @@ logging.basicConfig(filename='server.log', level=logging.INFO, format='%(asctime
 # Database configuration
 DATABASE = 'storage.db'
 
-# Create database tables if they don't exist
+# Initialize database tables if they don't exist
 def initialize_db():
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
@@ -170,4 +171,15 @@ def download_file():
     return jsonify({'message': 'File downloaded successfully', 'encrypted_file': f.decrypt(file).decode()}), 200
 
 if __name__ == '__main__':
-    app.run(ssl_context='adhoc')
+    parser = argparse.ArgumentParser(description='Secure Online Storage Server')
+    parser.add_argument('--host', type=str, default='127.0.0.1',
+                        help='Hostname or IP address to run the server on')
+    parser.add_argument('--port', type=int, default=5000,
+                        help='Port number to run the server on')
+    args = parser.parse_args()
+    
+    # For testing without SSL, use 'http://'
+    # Remove ssl_context for HTTP
+    # app.run(host=args.host, port=args.port, ssl_context='adhoc')
+    print("Server listening on 127.0.0.1:5000 ")
+    app.run(host=args.host, port=args.port)

@@ -4,3 +4,55 @@
 2025-04-09 04:18:22,963 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on https://127.0.0.1:5000
 2025-04-09 04:18:22,963 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-09 12:28:39,527 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://127.0.0.1:5000
+2025-04-09 12:28:39,528 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-09 12:34:14,085 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://127.0.0.1:5000
+2025-04-09 12:34:14,085 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-09 12:37:07,712 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://127.0.0.1:5000
+2025-04-09 12:37:07,712 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-09 12:47:20,896 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on https://localhost:5000
+2025-04-09 12:47:20,896 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-09 12:48:15,531 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-04-09 12:48:15,531 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-09 12:48:33,536 - INFO - New user registered: t
+2025-04-09 12:48:33,537 - INFO - 127.0.0.1 - - [09/Apr/2025 12:48:33] "POST /register HTTP/1.1" 200 -
+2025-04-09 12:53:44,110 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\xe5>\x06\x18|\x9f\xc0\xfc@k\xe9\xc8:��\xc3c(\xac\x8d')
+2025-04-09 12:53:44,111 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\xe5>\x06\x18|\x9f\xc0\xfc@k\xe9\xc8:��\xc3c(\xac\x8d\x09\xb4G\xe7m\xc8('\x83\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0[0m" 400 -
+2025-04-09 12:53:44,113 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\xa19\xe8Nb\x7f\xa8\xbc\xd4\xe4\xeco\xd3\x8a')
+2025-04-09 12:53:44,113 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\xa19\xe8Nb\x7f\xa8\xbc\xd4\xe4\xeco\xd3\x8a\x1e\x85\xe3c\x9e\xe4\xb2\x95\xcd\x8e\x03h&4\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0[0m" 400 -
+2025-04-09 12:53:44,114 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request syntax ('\x16\x03\x01\x00X\x01\x00\x00T\x03\x01g\xf5\xfdXI\x00\x89;.\xf6F\xcdL$\x03Q')
+2025-04-09 12:53:44,114 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x00X\x01\x00\x00T\x03\x01g\xf5\xfdXI\x00\x89;.\xf6F\xcdL$\x03Q[0m" 400 -
+2025-04-09 12:53:44,146 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x012\x01\x00\x01.\x03\x03;m')
+2025-04-09 12:53:44,146 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x012\x01\x00\x01.\x03\x03;m\x0dy@[0m" 400 -
+2025-04-09 12:53:44,189 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\x02\x93-P\xfc\x809\x10F\xfa\xbb73\xd6\x82\xfay\xe1')
+2025-04-09 12:53:44,189 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\x02\x93-P\xfc\x809\x10F\xfa\xbb73\xd6\x82\xfay\xe1 \x13\x94Z\x8c\xe4\x15\xf0N\x03\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0[0m" 400 -
+2025-04-09 12:53:44,190 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request syntax ("\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\xac\x9bH�X��8\\��\xcdZG��*\xa1X\x82^��\xdd\xd6\x08\xe8\\\xdf\x15v\xbcq\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0")
+2025-04-09 12:53:44,190 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\x8e\x01\x00\x00\x8a\x03\x03g\xf5\xfdX\xac\x9bH�X��8\\��\xcdZG��*\xa1X\x82^��\xdd\xd6\x08\xe8\\\xdf\x15v\xbcq\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0[0m" 400 -
+2025-04-09 12:53:44,191 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ('\xc0')
+2025-04-09 12:53:44,192 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x00X\x01\x00\x00T\x03\x01g\xf5\xfdXj\xd6\xb9,\x0c\xfce!\x80L\xf1\x7f%Tp\x023v6\xcf\x99c[\xdb\xab\xe8\xaaE\x00\x00\x0c\xc0[0m" 400 -
+2025-04-09 12:53:44,193 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ('4\x03\x9f\xc0\xe4\x84\xb9\x8a|\x90\xe1Nq\x0e')
+2025-04-09 12:53:44,193 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x012\x01\x00\x01.\x03\x03o\xba\xe9^\xf1(N2\x91f:]\x0c\xac\x0f\xda\xbd�D \xa8\x19\xd0\xc1\xd5\xc1l\xaa\x95�X\xf5f\xbf \xa04\x03\x9f\xc0\xe4\x84\xb9\x8a|\x90\xe1Nq\x0e[0m" 400 -
+2025-04-09 12:53:44,201 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x03\x00')
+2025-04-09 12:53:44,201 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\xa0\x01\x00\x00\x9c\x03\x03g\xf5\xfdX\x9d��:V\xe7\x99\x9c\xb3\xca\xa9\xdb\xba[0m" 400 -
+2025-04-09 12:53:44,203 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ("\xbf4\xb4\x02\x82\xf9\x87��(_\x8d\xd1\xe0^\x8c\x9f\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0")
+2025-04-09 12:53:44,204 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\xa0\x01\x00\x00\x9c\x03\x03g\xf5\xfdXSOB\xdbJ\xf2z\xd6\xaa\x9aL\x09\xbf4\xb4\x02\x82\xf9\x87��(_\x8d\xd1\xe0^\x8c\x9f\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0[0m" 400 -
+2025-04-09 12:53:44,205 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ('\xc0')
+2025-04-09 12:53:44,205 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x00j\x01\x00\x00f\x03\x01g\xf5\xfdX[\x9ay\x96\xbdS=\xc0q\x06\xc3 \x84\x14x5\xde\x13\x80U(\xe1\x85tT\x16\xb9c\x00\x00\x0c\xc0[0m" 400 -
+2025-04-09 12:53:44,207 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ("/\xec\xd8\x87��6x\xac\xc5\xe3\x10\xf3\xd6\xe9\x7f3\xc3c_N\xc7\x00>\x13\x02\x13\x03\x13\x01\xc0,\xc00\x00\x9f\xcc\xa9\xcc\xa8\xcc\xaa\xc0+\xc0/\x00\x9e\xc0$\xc0(\x00k\xc0#\xc0'\x00g\xc0")
+2025-04-09 12:53:44,207 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x012\x01\x00\x01.\x03\x03\x8e\xd0\xb5r\x9a\xd1/F\xb3\x97\x8e9\xc6\x96X\xaa\x81Y\x00\xc9DhZ\xcf>\xae\xfez*\xdf\xb9\xd3 E\xd2\x11\xff\x12|\xbf\x04\x1c\xc5\x0d/\xec\xd8\x87��6x\xac\xc5\xe3\x10\xf3\xd6\xe9\x7f3\xc3c_N\xc7\x00>\x13\x02\x13\x03\x13\x01\xc0,\xc00\x00\x9f\xcc\xa9\xcc\xa8\xcc\xaa\xc0+\xc0/\x00\x9e\xc0$\xc0(\x00k\xc0#\xc0'\x00g\xc0[0m" 400 -
+2025-04-09 12:53:44,236 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[33mGET / HTTP/1.1[0m" 404 -
+2025-04-09 12:53:44,239 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[33mGET / HTTP/1.1[0m" 404 -
+2025-04-09 12:53:44,258 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x03\x00')
+2025-04-09 12:53:44,258 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\xa0\x01\x00\x00\x9c\x03\x03g\xf5\xfdXk\xf4n\xfb\xf4\xeb\xf9/)\x9c\xa4\xab\xc4\xe1puB\xfe\x99\x18\xb3\x16g\xa9A\xebUt\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0[0m" 400 -
+2025-04-09 12:53:44,259 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ("\x80T��\x9b\x03\xb5\xf6\xab\xd5z\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0")
+2025-04-09 12:53:44,259 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x03\x00\xa0\x01\x00\x00\x9c\x03\x03g\xf5\xfdX\x04\xe1V\xc5-\x88\xe7\x8e5]\x0b\xe5\x0c\x17\xf8\xd0,\x0d\x80T��\x9b\x03\xb5\xf6\xab\xd5z\x00\x00$\xc0,\xc0+\xc00\xc0/\xc0$\xc0#\xc0(\xc0'\xc0[0m" 400 -
+2025-04-09 12:53:44,260 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ('\x87gV')
+2025-04-09 12:53:44,260 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x00j\x01\x00\x00f\x03\x01g\xf5\xfdX\xc7wX\x8c&\x1ef\xdfS\xf8\xd1\xc2)b\x98\x0b2=\x0b\x87gV[0m" 400 -
+2025-04-09 12:53:44,261 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ('\x87\x94\xc1\x17\xae\x8e\xa4~"n')
+2025-04-09 12:53:44,261 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x012\x01\x00\x01.\x03\x03~Z��\x0b\x00\xdb\xef\xba>\xff\xc1\xf6$\xd2\xb4@\xf4\xb3\x9b\xc1��?lip}\xc9\x0e�X\x1f\xdd\xcb \xb4\x01\xcd5f{\xf6\x8b\x04\x85\x87\x94\xc1\x17\xae\x8e\xa4~"n[0m" 400 -
+2025-04-09 12:53:44,266 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[33mGET / HTTP/1.1[0m" 404 -
