@@ -29,12 +29,27 @@ def initialize_db():
                   salt text)''')
     
     # File table
-    c.execute('''CREATE TABLE IF NOT EXISTS files
-                 (file_id integer PRIMARY KEY,
-                  filename text,
-                  owner text,
-                  encrypted_key text,
-                  FOREIGN KEY(owner) REFERENCES users(username))''')
+    # Check if files table exists and has all required columns
+    c.execute("PRAGMA table_info(files)")
+    columns = [column[1] for column in c.fetchall()]
+    
+    # Required columns
+    required_columns = ['file_id', 'filename', 'owner', 'encrypted_key', 'encrypted_content']
+    
+    # If any required column is missing, drop the table and recreate it
+    if not all(col in columns for col in required_columns):
+        c.execute("DROP TABLE IF EXISTS files")
+        c.execute('''CREATE TABLE files
+                     (file_id integer PRIMARY KEY,
+                      filename text,
+                      owner text,
+                      encrypted_key text,
+                      encrypted_content blob,
+                      FOREIGN KEY(owner) REFERENCES users(username))''')
+    else:
+        # Ensure all columns exist by creating if necessary
+        c.execute('''ALTER TABLE files 
+                     ADD COLUMN IF NOT EXISTS encrypted_content blob''')
     
     # Share table
     c.execute('''CREATE TABLE IF NOT EXISTS shares
@@ -67,7 +82,6 @@ def register():
     data = request.json
     username = data.get('username')
     password = data.get('password')
-    
     if not username or not password:
         return jsonify({'error': 'Username and password are required'}), 400
     
@@ -125,9 +139,9 @@ def upload_file():
     data = request.json
     username = data.get('username')
     filename = data.get('filename')
-    encrypted_file = data.get('encrypted_file')
+    encrypted_content = data.get('encrypted_content')
     
-    if not username or not filename or not encrypted_file:
+    if not username or not filename or not encrypted_content:
         return jsonify({'error': 'Missing required fields'}), 400
     
     # Generate a random key for file encryption
@@ -137,8 +151,9 @@ def upload_file():
     # Store the encrypted file
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
-    c.execute('INSERT INTO files (filename, owner, encrypted_key) VALUES (?, ?, ?)',
-              (filename, username, key.decode()))
+    c.execute('''INSERT INTO files (filename, owner, encrypted_key, encrypted_content) 
+                 VALUES (?, ?, ?, ?)''',
+              (filename, username, key.decode(), encrypted_content))
     conn.commit()
     conn.close()
     
@@ -156,19 +171,24 @@ def download_file():
     
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
-    c.execute('SELECT * FROM files WHERE file_id=? AND owner=?', (file_id, username))
-    file = c.fetchone()
+    c.execute('''SELECT encrypted_key, encrypted_content 
+                 FROM files 
+                 WHERE file_id=? AND owner=?''', (file_id, username))
+    result = c.fetchone()
     conn.close()
     
-    if not file:
+    if not result:
         return jsonify({'error': 'File not found or unauthorized access'}), 404
     
-    # Retrieve the encrypted key and decrypt the file
-    key = file[3].encode()
-    f = Fernet(key)
+    encrypted_key = result[0].encode()
+    encrypted_content = result[1]
     
-    logging.info(f"File downloaded by user: {username}, file_id: {file_id}")
-    return jsonify({'message': 'File downloaded successfully', 'encrypted_file': f.decrypt(file).decode()}), 200
+    # Return the encrypted content and the key for decryption
+    return jsonify({
+        'message': 'File downloaded successfully',
+        'encrypted_content': encrypted_content.decode(),
+        'decryption_key': encrypted_key.decode()
+    }), 200
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Secure Online Storage Server')
@@ -178,8 +198,5 @@ if __name__ == '__main__':
                         help='Port number to run the server on')
     args = parser.parse_args()
     
-    # For testing without SSL, use 'http://'
-    # Remove ssl_context for HTTP
-    # app.run(host=args.host, port=args.port, ssl_context='adhoc')
     print("Server listening on 127.0.0.1:5000 ")
     app.run(host=args.host, port=args.port)

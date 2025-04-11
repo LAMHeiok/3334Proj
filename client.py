@@ -6,6 +6,9 @@ from client_utils import (
 )
 import getpass
 import os
+import tkinter as tk
+from tkinter import filedialog
+from cryptography.fernet import Fernet
 
 class Client:
     def __init__(self, server_url):
@@ -35,13 +38,42 @@ class Client:
         if not self.username:
             print("Please login first.")
             return
-        
-        filename = input("Enter filename: ")
+
+        # Initialize Tkinter
+        TK = tk.Tk()
+        TK.withdraw()  # Hide the main window
+    
+        # Open file dialog
+        filename = filedialog.askopenfilename(title="Select a file to upload")
+        if not filename:  # If no file is selected, filename will be an empty string
+            print("No file selected.")
+            return
+
         if not os.path.exists(filename):
             print("File not found.")
             return
-        
-        result = upload_file(self.server_url, self.username, filename)
+
+        # Read the file content
+        with open(filename, 'rb') as f:
+            file_content = f.read()
+
+        # Generate a key for encryption
+        key = Fernet.generate_key()
+        cipher_suite = Fernet(key)
+        encrypted_content = cipher_suite.encrypt(file_content)
+
+        # Get the filename
+        file_name = os.path.basename(filename)
+
+        # Upload the file
+        result = upload_file(
+            self.server_url,
+            self.username,
+            file_name,
+            encrypted_content.decode(),
+            key.decode()
+        )
+
         if 'message' in result:
             print(result['message'])
         else:
@@ -55,10 +87,31 @@ class Client:
         file_id = input("Enter file ID: ")
         result = download_file(self.server_url, self.username, file_id)
         
-        if 'content' in result:
+        if 'message' in result:
+            # Extract the necessary information
+            encrypted_content = result.get('encrypted_content', None)
+            decryption_key = result.get('decryption_key', None)
+            
+            if not encrypted_content or not decryption_key:
+                print("Error: Missing file content or decryption key.")
+                return
+
+            # Save the file
             filename = os.path.basename(result.get('filename', 'downloaded_file'))
             with open(filename, 'wb') as f:
-                f.write(result['content'])
+                f.write(encrypted_content.encode())
+
+            # Decrypt the file
+            key = decryption_key.encode()
+            cipher_suite = Fernet(key)
+            with open(filename, 'rb') as f:
+                encrypted_data = f.read()
+            decrypted_data = cipher_suite.decrypt(encrypted_data)
+
+            # Save the decrypted content
+            with open(filename, 'wb') as f:
+                f.write(decrypted_data)
+
             print(f"File saved as: {filename}")
         else:
             print(f"Error: {result.get('error', 'Download failed')}")

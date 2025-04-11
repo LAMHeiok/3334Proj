@@ -56,3 +56,61 @@
 2025-04-09 12:53:44,261 - ERROR - 127.0.0.1 - - [09/Apr/2025 12:53:44] code 400, message Bad request version ('\x87\x94\xc1\x17\xae\x8e\xa4~"n')
 2025-04-09 12:53:44,261 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[31m[1m\x16\x03\x01\x012\x01\x00\x01.\x03\x03~Z��\x0b\x00\xdb\xef\xba>\xff\xc1\xf6$\xd2\xb4@\xf4\xb3\x9b\xc1��?lip}\xc9\x0e�X\x1f\xdd\xcb \xb4\x01\xcd5f{\xf6\x8b\x04\x85\x87\x94\xc1\x17\xae\x8e\xa4~"n[0m" 400 -
 2025-04-09 12:53:44,266 - INFO - 127.0.0.1 - - [09/Apr/2025 12:53:44] "[33mGET / HTTP/1.1[0m" 404 -
+2025-04-11 10:09:30,003 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 10:09:30,003 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 10:09:36,700 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 10:09:36,700 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 10:10:24,705 - INFO - 127.0.0.1 - - [11/Apr/2025 10:10:24] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-11 10:17:55,476 - INFO - 127.0.0.1 - - [11/Apr/2025 10:17:55] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-11 10:18:53,005 - INFO - 127.0.0.1 - - [11/Apr/2025 10:18:53] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-11 10:21:06,629 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 10:21:06,629 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 10:21:17,201 - INFO - 127.0.0.1 - - [11/Apr/2025 10:21:17] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-11 10:22:59,484 - INFO - User logged in: t
+2025-04-11 10:22:59,484 - INFO - 127.0.0.1 - - [11/Apr/2025 10:22:59] "POST /login HTTP/1.1" 200 -
+2025-04-11 10:25:17,204 - INFO - User logged in: t
+2025-04-11 10:25:17,204 - INFO - 127.0.0.1 - - [11/Apr/2025 10:25:17] "POST /login HTTP/1.1" 200 -
+2025-04-11 10:27:54,853 - INFO - User logged in: t
+2025-04-11 10:27:54,854 - INFO - 127.0.0.1 - - [11/Apr/2025 10:27:54] "POST /login HTTP/1.1" 200 -
+2025-04-11 10:28:14,519 - INFO - User logged in: t
+2025-04-11 10:28:14,519 - INFO - 127.0.0.1 - - [11/Apr/2025 10:28:14] "POST /login HTTP/1.1" 200 -
+2025-04-11 10:28:25,320 - INFO - File uploaded by user: t, filename: C:/Users/georg/Downloads/1.5_9gongge.pdf
+2025-04-11 10:28:25,320 - INFO - 127.0.0.1 - - [11/Apr/2025 10:28:25] "POST /upload HTTP/1.1" 200 -
+2025-04-11 10:29:14,872 - INFO - File downloaded by user: t, file_id: 1
+2025-04-11 10:29:14,872 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Git\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Git\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Git\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Git\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Git\3334Proj\server.py", line 171, in download_file
+    return jsonify({'message': 'File downloaded successfully', 'encrypted_file': f.decrypt(file).decode()}), 200
+                                                                                 ^^^^^^^^^^^^^^^
+  File "C:\Git\3334Proj\.venv\Lib\site-packages\cryptography\fernet.py", line 84, in decrypt
+    timestamp, data = Fernet._get_unverified_token_data(token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Git\3334Proj\.venv\Lib\site-packages\cryptography\fernet.py", line 110, in _get_unverified_token_data
+    raise TypeError("token must be bytes or str")
+TypeError: token must be bytes or str
+2025-04-11 10:29:14,873 - INFO - 127.0.0.1 - - [11/Apr/2025 10:29:14] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-11 10:57:23,968 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 10:57:23,968 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 10:57:47,020 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 10:57:47,020 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 10:57:59,998 - INFO - New user registered: t
+2025-04-11 10:57:59,998 - INFO - 127.0.0.1 - - [11/Apr/2025 10:57:59] "POST /register HTTP/1.1" 200 -
+2025-04-11 10:58:04,947 - INFO - User logged in: t
+2025-04-11 10:58:04,948 - INFO - 127.0.0.1 - - [11/Apr/2025 10:58:04] "POST /login HTTP/1.1" 200 -

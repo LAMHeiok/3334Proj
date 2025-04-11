@@ -35,7 +35,9 @@ def decrypt_file(encrypted_content, key):
 def make_request(server_url, endpoint, data=None, method='POST'):
     """Make an HTTP request to the server."""
     try:
-        response = requests.request(method, f"{server_url}/{endpoint}", json=data)
+        response = ""
+        if method == 'POST':
+            response = requests.post(f"{server_url}/{endpoint}", json=data)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
