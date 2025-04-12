@@ -2,13 +2,14 @@ from client_utils import (
     register_user,
     login_user,
     upload_file,
-    download_file
+    download_file,
+    share_file
 )
 import getpass
 import os
 import tkinter as tk
 from tkinter import filedialog
-from cryptography.fernet import Fernet
+import base64  # 新增導入
 
 class Client:
     def __init__(self, server_url):
@@ -39,13 +40,10 @@ class Client:
             print("Please login first.")
             return
 
-        # Initialize Tkinter
         TK = tk.Tk()
-        TK.withdraw()  # Hide the main window
-    
-        # Open file dialog
+        TK.withdraw()
         filename = filedialog.askopenfilename(title="Select a file to upload")
-        if not filename:  # If no file is selected, filename will be an empty string
+        if not filename:
             print("No file selected.")
             return
 
@@ -53,29 +51,10 @@ class Client:
             print("File not found.")
             return
 
-        # Read the file content
-        with open(filename, 'rb') as f:
-            file_content = f.read()
-
-        # Generate a key for encryption
-        key = Fernet.generate_key()
-        cipher_suite = Fernet(key)
-        encrypted_content = cipher_suite.encrypt(file_content)
-
-        # Get the filename
-        file_name = os.path.basename(filename)
-
-        # Upload the file
-        result = upload_file(
-            self.server_url,
-            self.username,
-            file_name,
-            encrypted_content.decode(),
-            key.decode()
-        )
-
+        result = upload_file(self.server_url, self.username, filename)
         if 'message' in result:
-            print(result['message'])
+            file_id = result.get('file_id')
+            print(f"{result['message']} (File ID: {file_id})")
         else:
             print(f"Error: {result.get('error', 'Upload failed')}")
 
@@ -87,41 +66,61 @@ class Client:
         file_id = input("Enter file ID: ")
         result = download_file(self.server_url, self.username, file_id)
         
-        if 'message' in result:
-            # Extract the necessary information
-            encrypted_content = result.get('encrypted_content', None)
-            decryption_key = result.get('decryption_key', None)
-            
-            if not encrypted_content or not decryption_key:
-                print("Error: Missing file content or decryption key.")
+        if 'encrypted_content' in result and 'filename' in result and 'encrypted_key' in result:
+            private_key_file = f"{self.username}_private.pem"
+            if not os.path.exists(private_key_file):
+                print(f"Error: Private key not found (expected: {private_key_file}).")
                 return
-
-            # Save the file
-            filename = os.path.basename(result.get('filename', 'downloaded_file'))
-            with open(filename, 'wb') as f:
-                f.write(encrypted_content.encode())
-
-            # Decrypt the file
-            key = decryption_key.encode()
-            cipher_suite = Fernet(key)
-            with open(filename, 'rb') as f:
-                encrypted_data = f.read()
-            decrypted_data = cipher_suite.decrypt(encrypted_data)
-
-            # Save the decrypted content
-            with open(filename, 'wb') as f:
-                f.write(decrypted_data)
-
-            print(f"File saved as: {filename}")
+            
+            from cryptography.hazmat.primitives import serialization, hashes
+            from cryptography.hazmat.primitives.asymmetric import padding
+            from cryptography.fernet import Fernet
+            
+            # Load private key
+            with open(private_key_file, 'rb') as f:
+                private_key = serialization.load_pem_private_key(f.read(), password=None)
+            
+            # Decrypt the Fernet key
+            try:
+                encrypted_key = base64.b64decode(result['encrypted_key'])
+                fernet_key = private_key.decrypt(
+                    encrypted_key,
+                    padding.OAEP(
+                        mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                        algorithm=hashes.SHA256(),
+                        label=None
+                    )
+                )
+                
+                # Decrypt the file content
+                fernet = Fernet(fernet_key)
+                decrypted_content = fernet.decrypt(result['encrypted_content'].encode())
+                filename = input(f"Enter filename to save as (default: {result['filename']}): ") or result['filename']
+                with open(filename, 'wb') as f:
+                    f.write(decrypted_content)
+                print(f"File saved as: {filename}")
+            except Exception as e:
+                print(f"Error: Failed to decrypt file - {str(e)}")
         else:
             print(f"Error: {result.get('error', 'Download failed')}")
 
+    def share_file(self):
+        if not self.username:
+            print("Please login first.")
+            return
+        
+        file_id = input("Enter file ID to share: ")
+        shared_with = input("Enter username to share with: ")
+        result = share_file(self.server_url, self.username, file_id, shared_with)
+        
+        if 'message' in result:
+            print(result['message'])
+        else:
+            print(f"Error: {result.get('error', 'Sharing failed')}")
+
 def main():
-    # Get server hostname and port from user
     server_host = input("Enter server hostname (default: 127.0.0.1): ") or '127.0.0.1'
     server_port = input("Enter server port (default: 5000): ") or '5000'
-    
-    # Use HTTP for testing without SSL issues
     server_url = f"http://{server_host}:{server_port}"
     client = Client(server_url)
     
@@ -131,8 +130,8 @@ def main():
         print("2. Login")
         print("3. Upload file")
         print("4. Download file")
-        print("5. Exit")
-        
+        print("5. Share file")
+        print("6. Exit")
         choice = input("Enter your choice: ")
         
         if choice == '1':
@@ -144,6 +143,8 @@ def main():
         elif choice == '4':
             client.download_file()
         elif choice == '5':
+            client.share_file()
+        elif choice == '6':
             break
         else:
             print("Invalid choice. Please try again.")
