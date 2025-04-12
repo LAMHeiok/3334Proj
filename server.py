@@ -60,14 +60,20 @@ def register():
     salt = bytes.fromhex(data.get('salt'))
     public_key = data.get('public_key')
     if not all([username, password, salt, public_key]):
-        return jsonify({'error': 'Missing required fields'}), 400
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please enter all required fields (username, password, etc.)'
+        }), 400
     
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
     c.execute('SELECT * FROM users WHERE username=?', (username,))
     if c.fetchone():
         conn.close()
-        return jsonify({'error': 'Username already exists'}), 400
+        return jsonify({
+            'error': 'username_exists',
+            'error_description': 'This username is already taken. Please choose another.'
+        }), 400
     
     c.execute('INSERT INTO users VALUES (?, ?, ?, ?)', (username, password, salt.hex(), public_key))
     conn.commit()
@@ -81,7 +87,10 @@ def login():
     username = data.get('username')
     password = data.get('password')
     if not username or not password:
-        return jsonify({'error': 'Username and password are required'}), 400
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please enter username and password'
+        }), 400
     
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
@@ -90,10 +99,56 @@ def login():
     conn.close()
     
     if not user or hash_password(password, bytes.fromhex(user[2])) != user[1].encode():
-        return jsonify({'error': 'Invalid username or password'}), 401
+        return jsonify({
+            'error': 'invalid_credentials',
+            'error_description': 'Incorrect username or password'
+        }), 401
     
     logging.info(f"User logged in: {username}")
     return jsonify({'message': 'Login successful'}), 200
+
+@app.route('/reset_password', methods=['POST'])
+def reset_password():
+    data = request.json
+    username = data.get('username')
+    old_password = data.get('old_password')
+    new_password = data.get('new_password')
+    if not all([username, old_password, new_password]):
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please enter username, current password, and new password'
+        }), 400
+    
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute('SELECT * FROM users WHERE username=?', (username,))
+    user = c.fetchone()
+    if not user:
+        conn.close()
+        return jsonify({
+            'error': 'user_not_found',
+            'error_description': 'User not found'
+        }), 404
+    
+    # Verify old password
+    if hash_password(old_password, bytes.fromhex(user[2])) != user[1].encode():
+        conn.close()
+        return jsonify({
+            'error': 'incorrect_old_password',
+            'error_description': 'Current password is incorrect'
+        }), 401
+    
+    # Generate new salt and hash
+    new_salt = os.urandom(16)
+    new_password_hash = hash_password(new_password, new_salt)
+    
+    # Update password and salt
+    c.execute('UPDATE users SET password_hash=?, salt=? WHERE username=?',
+              (new_password_hash.decode(), new_salt.hex(), username))
+    conn.commit()
+    conn.close()
+    logging.info(f"Password reset for user: {username}")
+    return jsonify({'message': 'Password reset successfully'}), 200
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -103,7 +158,10 @@ def upload_file():
     encrypted_content = data.get('encrypted_file')
     encrypted_key = data.get('encrypted_key')
     if not all([username, filename, encrypted_content, encrypted_key]):
-        return jsonify({'error': 'Missing required fields'}), 400
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please provide file name and content'
+        }), 400
     
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
@@ -111,7 +169,10 @@ def upload_file():
     public_key_pem = c.fetchone()
     if not public_key_pem:
         conn.close()
-        return jsonify({'error': 'User not found'}), 404
+        return jsonify({
+            'error': 'user_not_found',
+            'error_description': 'User not found. Please register first.'
+        }), 404
     
     public_key = serialization.load_pem_public_key(public_key_pem[0].encode())
     
@@ -135,7 +196,10 @@ def download_file():
     username = data.get('username')
     file_id = data.get('file_id')
     if not username or not file_id:
-        return jsonify({'error': 'Missing required fields'}), 400
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please enter file ID'
+        }), 400
     
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
@@ -157,7 +221,10 @@ def download_file():
     
     conn.close()
     if not result:
-        return jsonify({'error': 'File not found or unauthorized access'}), 404
+        return jsonify({
+            'error': 'file_not_found_or_unauthorized',
+            'error_description': 'File not found or you lack access permission'
+        }), 404
     
     filename, encrypted_content = result[0], result[1]
     return jsonify({
@@ -175,25 +242,37 @@ def share_file():
     shared_with = data.get('shared_with')
     encrypted_key = data.get('encrypted_key')
     if not all([username, file_id, shared_with, encrypted_key]):
-        return jsonify({'error': 'Missing required fields'}), 400
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please enter file ID and target user'
+        }), 400
     
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
     c.execute('SELECT * FROM files WHERE file_id=? AND owner=?', (file_id, username))
     if not c.fetchone():
         conn.close()
-        return jsonify({'error': 'File not found or you are not the owner'}), 403
+        return jsonify({
+            'error': 'file_not_found_or_not_owner',
+            'error_description': 'File not found or you are not the owner'
+        }), 403
     
     c.execute('SELECT * FROM users WHERE username=?', (shared_with,))
     if not c.fetchone():
         conn.close()
-        return jsonify({'error': 'Target user does not exist'}), 404
+        return jsonify({
+            'error': 'target_user_not_found',
+            'error_description': 'Target user does not exist'
+        }), 404
     
     c.execute('SELECT * FROM shares WHERE file_id=? AND owner=? AND shared_with=?',
               (file_id, username, shared_with))
     if c.fetchone():
         conn.close()
-        return jsonify({'error': 'File already shared with this user'}), 400
+        return jsonify({
+            'error': 'already_shared',
+            'error_description': 'File is already shared with this user'
+        }), 400
     
     c.execute('INSERT INTO shares (file_id, owner, shared_with, encrypted_key) VALUES (?, ?, ?, ?)',
               (file_id, username, shared_with, encrypted_key))
@@ -207,7 +286,10 @@ def get_public_key():
     data = request.json
     username = data.get('username')
     if not username:
-        return jsonify({'error': 'Username required'}), 400
+        return jsonify({
+            'error': 'missing_username',
+            'error_description': 'Please provide username'
+        }), 400
     
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
@@ -216,9 +298,88 @@ def get_public_key():
     conn.close()
     
     if not result:
-        return jsonify({'error': 'User not found'}), 404
+        return jsonify({
+            'error': 'user_not_found',
+            'error_description': 'User not found'
+        }), 404
     
     return jsonify({'public_key': result[0]}), 200
+
+@app.route('/list_files', methods=['POST'])
+def list_files():
+    data = request.json
+    username = data.get('username')
+    if not username:
+        return jsonify({
+            'error': 'missing_username',
+            'error_description': 'Please provide username'
+        }), 400
+    
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute('SELECT file_id, filename FROM files WHERE owner=?', (username,))
+    owned_files = [{'file_id': row[0], 'filename': row[1]} for row in c.fetchall()]
+    c.execute('SELECT f.file_id, f.filename FROM files f JOIN shares s ON f.file_id = s.file_id WHERE s.shared_with=?', (username,))
+    shared_files = [{'file_id': row[0], 'filename': row[1]} for row in c.fetchall()]
+    conn.close()
+    
+    logging.info(f"Listed files for user: {username}")
+    return jsonify({'owned_files': owned_files, 'shared_files': shared_files}), 200
+
+@app.route('/delete_file', methods=['POST'])
+def delete_file():
+    data = request.json
+    username = data.get('username')
+    file_id = data.get('file_id')
+    if not username or not file_id:
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please enter file ID'
+        }), 400
+    
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute('SELECT * FROM files WHERE file_id=? AND owner=?', (file_id, username))
+    if not c.fetchone():
+        conn.close()
+        return jsonify({
+            'error': 'file_not_found_or_not_owner',
+            'error_description': 'File not found or you are not the owner'
+        }), 403
+    
+    c.execute('DELETE FROM shares WHERE file_id=?', (file_id,))
+    c.execute('DELETE FROM files WHERE file_id=?', (file_id,))
+    conn.commit()
+    conn.close()
+    logging.info(f"File {file_id} deleted by {username}")
+    return jsonify({'message': 'File deleted successfully'}), 200
+
+@app.route('/revoke_share', methods=['POST'])
+def revoke_share():
+    data = request.json
+    username = data.get('username')
+    file_id = data.get('file_id')
+    shared_with = data.get('shared_with')
+    if not all([username, file_id, shared_with]):
+        return jsonify({
+            'error': 'missing_fields',
+            'error_description': 'Please enter file ID and target user'
+        }), 400
+    
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute('DELETE FROM shares WHERE file_id=? AND owner=? AND shared_with=?', (file_id, username, shared_with))
+    if c.rowcount == 0:
+        conn.close()
+        return jsonify({
+            'error': 'share_not_found',
+            'error_description': 'No such share exists or you are not the owner'
+        }), 403
+    
+    conn.commit()
+    conn.close()
+    logging.info(f"Share revoked for file {file_id} by {username} from {shared_with}")
+    return jsonify({'message': 'Share revoked successfully'}), 200
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Secure Online Storage Server')
