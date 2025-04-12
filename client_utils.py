@@ -1,6 +1,7 @@
 import requests
 import hashlib
 import os
+import re
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
@@ -53,9 +54,15 @@ def make_request(server_url, endpoint, data=None, method='POST'):
         return {'error': str(e)}
 
 def register_user(server_url, username, password):
+    # Username validation
+    if not re.match(r'^[a-zA-Z0-9_]+$', username):
+        print("Error: Invalid username. Please use only alphanumeric characters and underscores.")  # Print error to console
+        logging.error("Invalid username provided. Registration aborted.") # Log the error
+        return {'error': 'invalid_username', 'error_description': 'Invalid username format'}  # Return an error dictionary
+
     salt = os.urandom(16)
     password_hash = generate_password_hash(password, salt)
-    public_key = generate_key_pair(username)
+    public_key = generate_key_pair(username) #key pair will only be generated if username is valid
     data = {
         'username': username,
         'password': password_hash.decode(),

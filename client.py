@@ -45,7 +45,7 @@ class Client:
             return
 
         TK = tk.Tk()
-        TK.withdraw()
+        # TK.withdraw()
         filename = filedialog.askopenfilename(title="Select a file to upload")
         if not filename:
             print("Error: No file selected")
@@ -54,7 +54,7 @@ class Client:
         if not os.path.exists(filename):
             print("Error: File does not exist")
             return
-
+        TK.destroy()
         result = upload_file(self.server_url, self.username, filename)
         if 'message' in result:
             file_id = result.get('file_id')

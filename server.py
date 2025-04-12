@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import sqlite3
 import hashlib
+import re
 import os
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import padding

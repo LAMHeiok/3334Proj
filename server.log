@@ -372,3 +372,182 @@ sqlite3.OperationalError: no such column: public_key
 2025-04-12 16:01:09,449 - INFO - User logged in: test2
 2025-04-12 16:01:09,449 - INFO - 127.0.0.1 - - [12/Apr/2025 16:01:09] "POST /login HTTP/1.1" 200 -
 2025-04-12 16:01:12,699 - INFO - 127.0.0.1 - - [12/Apr/2025 16:01:12] "POST /download HTTP/1.1" 200 -
+2025-04-12 20:58:51,519 - INFO - User logged in: t
+2025-04-12 20:58:51,519 - INFO - 127.0.0.1 - - [12/Apr/2025 20:58:51] "POST /login HTTP/1.1" 200 -
+2025-04-12 20:59:03,981 - INFO - File uploaded by user: t, filename: COMP3235 Assignment 02 S03.pdf
+2025-04-12 20:59:03,981 - INFO - 127.0.0.1 - - [12/Apr/2025 20:59:03] "POST /upload HTTP/1.1" 200 -
+2025-04-12 20:59:09,245 - INFO - Listed files for user: t
+2025-04-12 20:59:09,245 - INFO - 127.0.0.1 - - [12/Apr/2025 20:59:09] "POST /list_files HTTP/1.1" 200 -
+2025-04-12 20:59:19,325 - INFO - 127.0.0.1 - - [12/Apr/2025 20:59:19] "POST /get_public_key HTTP/1.1" 200 -
+2025-04-12 20:59:32,813 - INFO - 127.0.0.1 - - [12/Apr/2025 20:59:32] "[31m[1mPOST /get_public_key HTTP/1.1[0m" 400 -
+2025-04-12 20:59:36,941 - INFO - 127.0.0.1 - - [12/Apr/2025 20:59:36] "POST /get_public_key HTTP/1.1" 200 -
+2025-04-12 20:59:56,530 - INFO - 127.0.0.1 - - [12/Apr/2025 20:59:56] "[31m[1mPOST /reset_password HTTP/1.1[0m" 401 -
+2025-04-12 21:00:01,470 - INFO - Listed files for user: t
+2025-04-12 21:00:01,470 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:01] "POST /list_files HTTP/1.1" 200 -
+2025-04-12 21:00:08,589 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:08] "POST /download HTTP/1.1" 200 -
+2025-04-12 21:00:18,831 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:18] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-12 21:00:25,595 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:25] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 21:00:31,327 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:31] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-12 21:00:41,262 - INFO - User logged in: t1
+2025-04-12 21:00:41,262 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:41] "POST /login HTTP/1.1" 200 -
+2025-04-12 21:00:45,030 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:45] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 21:00:52,705 - INFO - User logged in: t1
+2025-04-12 21:00:52,705 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:52] "POST /login HTTP/1.1" 200 -
+2025-04-12 21:00:55,162 - INFO - 127.0.0.1 - - [12/Apr/2025 21:00:55] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 21:01:12,078 - INFO - 127.0.0.1 - - [12/Apr/2025 21:01:12] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 21:01:22,271 - INFO - 127.0.0.1 - - [12/Apr/2025 21:01:22] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-12 21:01:28,589 - INFO - 127.0.0.1 - - [12/Apr/2025 21:01:28] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 21:01:41,339 - INFO - New user registered: t4
+2025-04-12 21:01:41,339 - INFO - 127.0.0.1 - - [12/Apr/2025 21:01:41] "POST /register HTTP/1.1" 200 -
+2025-04-12 21:02:08,855 - INFO - 127.0.0.1 - - [12/Apr/2025 21:02:08] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 21:02:53,034 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 21:02:53,034 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 21:03:04,542 - INFO - New user registered: t
+2025-04-12 21:03:04,543 - INFO - 127.0.0.1 - - [12/Apr/2025 21:03:04] "POST /register HTTP/1.1" 200 -
+2025-04-12 21:14:51,546 - INFO - User logged in: t
+2025-04-12 21:14:51,546 - INFO - 127.0.0.1 - - [12/Apr/2025 21:14:51] "POST /login HTTP/1.1" 200 -
+2025-04-12 21:14:54,816 - INFO - New user registered: t1
+2025-04-12 21:14:54,816 - INFO - 127.0.0.1 - - [12/Apr/2025 21:14:54] "POST /register HTTP/1.1" 200 -
+2025-04-12 21:14:58,213 - INFO - User logged in: t1
+2025-04-12 21:14:58,213 - INFO - 127.0.0.1 - - [12/Apr/2025 21:14:58] "POST /login HTTP/1.1" 200 -
+2025-04-12 21:15:02,079 - INFO - File uploaded by user: t1, filename: COMP3235 Assignment 02 S03.pdf
+2025-04-12 21:15:02,080 - INFO - 127.0.0.1 - - [12/Apr/2025 21:15:02] "POST /upload HTTP/1.1" 200 -
+2025-04-12 21:15:40,307 - INFO - 127.0.0.1 - - [12/Apr/2025 21:15:40] "POST /get_public_key HTTP/1.1" 200 -
+2025-04-12 21:15:40,342 - INFO - 127.0.0.1 - - [12/Apr/2025 21:15:40] "POST /download HTTP/1.1" 200 -
+2025-04-12 21:15:40,353 - INFO - File 1 shared by t1 with t
+2025-04-12 21:15:40,353 - INFO - 127.0.0.1 - - [12/Apr/2025 21:15:40] "POST /share HTTP/1.1" 200 -
+2025-04-12 21:16:36,296 - ERROR - Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\server.py", line 148, in reset_password
+    conn.commit()
+sqlite3.OperationalError: database is locked
+2025-04-12 21:16:36,297 - INFO - 127.0.0.1 - - [12/Apr/2025 21:16:36] "[35m[1mPOST /reset_password HTTP/1.1[0m" 500 -
+2025-04-12 21:16:56,339 - ERROR - Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\server.py", line 124, in reset_password
+    c.execute('SELECT * FROM users WHERE username=?', (username,))
+sqlite3.OperationalError: database is locked
+2025-04-12 21:16:56,340 - INFO - 127.0.0.1 - - [12/Apr/2025 21:16:56] "[35m[1mPOST /reset_password HTTP/1.1[0m" 500 -
+2025-04-12 21:17:08,099 - ERROR - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\server.py", line 97, in login
+    c.execute('SELECT * FROM users WHERE username=?', (username,))
+sqlite3.OperationalError: database is locked
+2025-04-12 21:17:08,099 - INFO - 127.0.0.1 - - [12/Apr/2025 21:17:08] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-04-12 21:17:14,367 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 21:17:14,368 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 21:17:20,457 - INFO - User logged in: t
+2025-04-12 21:17:20,457 - INFO - 127.0.0.1 - - [12/Apr/2025 21:17:20] "POST /login HTTP/1.1" 200 -
+2025-04-12 21:17:32,233 - ERROR - Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\SAS\3334Proj\server.py", line 148, in reset_password
+    conn.commit()
+sqlite3.OperationalError: database is locked
+2025-04-12 21:17:32,234 - INFO - 127.0.0.1 - - [12/Apr/2025 21:17:32] "[35m[1mPOST /reset_password HTTP/1.1[0m" 500 -
+2025-04-12 21:18:46,661 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 21:18:46,662 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 21:18:51,511 - INFO - User logged in: t
+2025-04-12 21:18:51,511 - INFO - 127.0.0.1 - - [12/Apr/2025 21:18:51] "POST /login HTTP/1.1" 200 -
+2025-04-12 21:18:55,957 - INFO - Password reset for user: t
+2025-04-12 21:18:55,958 - INFO - 127.0.0.1 - - [12/Apr/2025 21:18:55] "POST /reset_password HTTP/1.1" 200 -
+2025-04-12 21:19:48,170 - INFO - Password reset for user: t
+2025-04-12 21:19:48,170 - INFO - 127.0.0.1 - - [12/Apr/2025 21:19:48] "POST /reset_password HTTP/1.1" 200 -
+2025-04-12 21:27:00,428 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 21:27:00,428 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 21:27:04,326 - INFO - New user registered: t
+2025-04-12 21:27:04,326 - INFO - 127.0.0.1 - - [12/Apr/2025 21:27:04] "POST /register HTTP/1.1" 200 -
+2025-04-12 21:27:08,105 - INFO - New user registered: t1
+2025-04-12 21:27:08,106 - INFO - 127.0.0.1 - - [12/Apr/2025 21:27:08] "POST /register HTTP/1.1" 200 -
+2025-04-12 21:58:03,645 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:03] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:04,957 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:04] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:06,300 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:06] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:07,116 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:07] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:07,723 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:07] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:08,268 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:08] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:08,811 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:08] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:09,291 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:09] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 21:58:09,819 - INFO - 127.0.0.1 - - [12/Apr/2025 21:58:09] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-12 22:01:18,281 - INFO - User logged in: t
+2025-04-12 22:01:18,282 - INFO - 127.0.0.1 - - [12/Apr/2025 22:01:18] "POST /login HTTP/1.1" 200 -
+2025-04-12 22:01:22,686 - INFO - 127.0.0.1 - - [12/Apr/2025 22:01:22] "[33mPOST /download HTTP/1.1[0m" 404 -
+2025-04-12 22:02:23,771 - INFO - New user registered: or 1=1
+2025-04-12 22:02:23,772 - INFO - 127.0.0.1 - - [12/Apr/2025 22:02:23] "POST /register HTTP/1.1" 200 -
+2025-04-12 22:02:31,256 - INFO - 127.0.0.1 - - [12/Apr/2025 22:02:31] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-12 22:02:56,820 - INFO - 127.0.0.1 - - [12/Apr/2025 22:02:56] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-12 22:06:49,677 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 22:06:49,677 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 22:06:58,365 - INFO - 127.0.0.1 - - [12/Apr/2025 22:06:58] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 22:07:14,947 - INFO - 127.0.0.1 - - [12/Apr/2025 22:07:14] "[33mPOST /login HTTP/1.1[0m" 404 -
+2025-04-12 22:07:19,046 - INFO - 127.0.0.1 - - [12/Apr/2025 22:07:19] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 22:07:22,674 - INFO - 127.0.0.1 - - [12/Apr/2025 22:07:22] "[33mPOST /login HTTP/1.1[0m" 404 -
+2025-04-12 22:09:46,494 - INFO - 127.0.0.1 - - [12/Apr/2025 22:09:46] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 22:09:57,515 - INFO - 127.0.0.1 - - [12/Apr/2025 22:09:57] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 22:16:05,083 - INFO - 127.0.0.1 - - [12/Apr/2025 22:16:05] "[33mPOST /login HTTP/1.1[0m" 404 -
+2025-04-12 22:17:02,786 - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:02] "[33mPOST /login HTTP/1.1[0m" 404 -
+2025-04-12 22:17:05,640 - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:05] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 22:17:12,824 - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:12] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-12 22:17:17,127 - INFO - New user registered: a
+2025-04-12 22:17:17,128 - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:17] "POST /register HTTP/1.1" 200 -
+2025-04-12 22:17:19,744 - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:19] "[33mPOST /login HTTP/1.1[0m" 404 -
+2025-04-12 22:17:42,894 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 22:17:42,894 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 22:17:50,403 - INFO - New user registered: a1
+2025-04-12 22:17:50,404 - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:50] "POST /register HTTP/1.1" 200 -
+2025-04-12 22:17:55,818 - INFO - 127.0.0.1 - - [12/Apr/2025 22:17:55] "[33mPOST /login HTTP/1.1[0m" 404 -
+2025-04-12 22:18:21,869 - INFO - New user registered: v2
+2025-04-12 22:18:21,870 - INFO - 127.0.0.1 - - [12/Apr/2025 22:18:21] "POST /register HTTP/1.1" 200 -
+2025-04-12 22:18:25,511 - INFO - 127.0.0.1 - - [12/Apr/2025 22:18:25] "[33mPOST /login HTTP/1.1[0m" 404 -
