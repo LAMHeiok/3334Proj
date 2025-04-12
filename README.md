@@ -1,4 +1,4 @@
-# 3334Proj Group I already forget
+# 3334Proj Team 77
  
  To use the program, install all the required library in the ```requirements.txt``` 
 
