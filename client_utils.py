@@ -102,7 +102,6 @@ def download_file(server_url, username, file_id):
     return result
 
 def share_file(server_url, username, file_id, shared_with):
-    # Fetch shared user's public key
     response = make_request(server_url, 'get_public_key', {'username': shared_with})
     if 'public_key' not in response:
         error_msg = response.get('error', 'Failed to fetch public key')
@@ -112,7 +111,6 @@ def share_file(server_url, username, file_id, shared_with):
     
     public_key = serialization.load_pem_public_key(response['public_key'].encode())
     
-    # Load owner's private key
     private_key_file = f"{username}_private.pem"
     if not os.path.exists(private_key_file):
         return {'error': f"Private key not found (expected: {private_key_file})"}
@@ -120,7 +118,6 @@ def share_file(server_url, username, file_id, shared_with):
     with open(private_key_file, 'rb') as f:
         private_key = serialization.load_pem_private_key(f.read(), password=None)
     
-    # Fetch the encrypted Fernet key
     file_data = make_request(server_url, 'download', {'username': username, 'file_id': file_id})
     if 'encrypted_key' not in file_data:
         return {'error': f"Failed to fetch file data for sharing: {file_data.get('error', 'Unknown error')}"}
@@ -134,7 +131,6 @@ def share_file(server_url, username, file_id, shared_with):
     except Exception as e:
         return {'error': f"Failed to decrypt Fernet key: {str(e)}"}
     
-    # Encrypt Fernet key with shared user's public key
     encrypted_key_for_shared = public_key.encrypt(
         fernet_key,
         padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None)
@@ -151,7 +147,30 @@ def share_file(server_url, username, file_id, shared_with):
         logging.error(f"Share error: {result['error']}")
     return result
 
-def get_public_key(server_url, username):
+def list_files(server_url, username):
     data = {'username': username}
-    result = make_request(server_url, 'get_public_key', data)
+    result = make_request(server_url, 'list_files', data)
+    if 'error' in result:
+        logging.error(f"List files error: {result['error']}")
+    return result
+
+def delete_file(server_url, username, file_id):
+    data = {'username': username, 'file_id': file_id}
+    result = make_request(server_url, 'delete_file', data)
+    if 'error' in result:
+        logging.error(f"Delete file error: {result['error']}")
+    return result
+
+def revoke_share(server_url, username, file_id, shared_with):
+    data = {'username': username, 'file_id': file_id, 'shared_with': shared_with}
+    result = make_request(server_url, 'revoke_share', data)
+    if 'error' in result:
+        logging.error(f"Revoke share error: {result['error']}")
+    return result
+
+def reset_password(server_url, username, old_password, new_password):
+    data = {'username': username, 'old_password': old_password, 'new_password': new_password}
+    result = make_request(server_url, 'reset_password', data)
+    if 'error' in result:
+        logging.error(f"Reset password error: {result['error']}")
     return result
