@@ -38,3 +38,52 @@
 2025-04-11 10:21:17,202 - ERROR - Registration error: 400 Client Error: BAD REQUEST for url: http://127.0.0.1:5000/register
 2025-04-11 10:29:14,874 - ERROR - Request error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/download
 2025-04-11 10:29:14,874 - ERROR - Download error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/download
+2025-04-11 21:16:52,232 - ERROR - Request error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 21:16:52,232 - ERROR - Login error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 21:25:22,306 - ERROR - Request error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 21:25:22,307 - ERROR - Login error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 22:58:21,404 - ERROR - Request error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 22:58:21,404 - ERROR - Login error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 23:14:38,787 - ERROR - Request error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 23:14:38,788 - ERROR - Login error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 23:30:36,228 - ERROR - Request error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 23:30:36,228 - ERROR - Login error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 23:30:45,307 - INFO - Key saved for file_id 1: test_1.key
+2025-04-11 23:42:02,341 - ERROR - Request error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 23:42:02,341 - ERROR - Login error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-11 23:42:11,081 - INFO - Key saved for file_id 1: file_1.key
+2025-04-11 23:50:37,573 - ERROR - Request error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/download
+2025-04-11 23:50:37,573 - ERROR - Download error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/download
+2025-04-12 02:06:21,822 - ERROR - Request error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/download
+2025-04-12 02:06:21,822 - ERROR - Download error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/download
+2025-04-12 02:06:29,855 - ERROR - Request error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/upload
+2025-04-12 02:06:29,855 - ERROR - Upload error: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/upload
+2025-04-12 02:07:38,231 - INFO - File uploaded with ID: 1
+2025-04-12 02:09:22,575 - INFO - File uploaded with ID: 2
+2025-04-12 02:19:33,410 - ERROR - Request error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/get_public_key
+2025-04-12 02:24:37,173 - ERROR - Request error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/get_public_key
+2025-04-12 02:26:31,744 - INFO - Request to login returned: {'message': 'Login successful'}
+2025-04-12 02:26:38,495 - INFO - Request to login returned: {'message': 'Login successful'}
+2025-04-12 02:26:42,930 - ERROR - Request error to get_public_key: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/get_public_key
+2025-04-12 02:28:44,109 - INFO - Request to register returned: {'message': 'User registered successfully'}
+2025-04-12 02:28:46,654 - INFO - Request to login returned: {'message': 'Login successful'}
+2025-04-12 02:28:49,079 - INFO - Request to upload returned: {'file_id': 1, 'message': 'File uploaded successfully'}
+2025-04-12 02:28:54,321 - INFO - Request to download returned: {'encrypted_content': 'gAAAAABn-V9hb-W2YBgtTVrXbI2BFHsuhqkRBdrV8Acnnsr4jvwoBsAtBe1SssnnP8xRONMiXUpvaHhtiH5IbT4vxTM9DnsFHg==', 'encrypted_key': 'xGODc0vCD46T+D9lOrezsE13OIxH2mhIwZeJbiZhuh0rd6Ngfj3Cw1bvJC20WqMj2Pt7iVQbeaY3IZxr9l1V6hzwTtwAKIo+w1BYMztJ0cx1VCMZgknQ95bunPw1qhtCpDXGI+8OgDGFa3MuZ7STcyEXNx7U6sJp0tXOM797ehSyyIbfH6cLn5cwIrP7qIhk9z8bkEgnTjNXQ7qBO2hCr0xidq7w44/ij380Lt+SvzmsXEc8LkvX5elFOug/kGf1kMb6VaisRyoORAttSRsVP0LYiAI3pE1pfywoZtCwzh+mv+HjlKoYo13pqTKsl7QvYhrmDCvnX/lSp7qFfyK96Q==', 'filename': 'test.txt', 'message': 'File downloaded successfully'}
+2025-04-12 02:29:03,181 - INFO - Request to register returned: {'message': 'User registered successfully'}
+2025-04-12 02:29:08,856 - ERROR - Request error to login: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-12 02:29:08,857 - ERROR - Login error: 401 Client Error: UNAUTHORIZED for url: http://127.0.0.1:5000/login
+2025-04-12 02:29:13,908 - INFO - Request to login returned: {'message': 'Login successful'}
+2025-04-12 02:29:22,576 - ERROR - Request error to get_public_key: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/get_public_key
+2025-04-12 15:56:02,636 - INFO - Request to register returned: {'message': 'User registered successfully'}
+2025-04-12 15:56:05,672 - INFO - Request to login returned: {'message': 'Login successful'}
+2025-04-12 15:56:55,747 - INFO - Request to register returned: {'message': 'User registered successfully'}
+2025-04-12 15:56:58,739 - INFO - Request to login returned: {'message': 'Login successful'}
+2025-04-12 15:57:04,565 - INFO - Request to upload returned: {'file_id': 1, 'message': 'File uploaded successfully'}
+2025-04-12 15:57:12,874 - INFO - Request to download returned: {'encrypted_content': 'gAAAAABn-hzQG91mYB8pW_0yP2ORt5yXB658s8NBt3e_4G_7fuEDxMdIiklLM7QAIO7KMWUXmy7EbFfpVN1QXh9yld8vr1fOvw==', 'encrypted_key': 'kIoY2GK554AC1W91fqn7W+8W77dKYAV62ARsZ7egRPb+CqjD/uZIiHsnxlIhZ0CtkbWMnutIG1nADb+tSSjUnZcfAFCAWWr88pArIeF3RzCwgPUbmy9cozYigKMU4ZcDUkipwqoKOk0iQnBbmuA8kg2VwxxTkRWlPSSSlx9EC8IqUVXf5WG18755+yOyJ6fybuchz0R2ionoN7ulkpzhtplxlyl+mf2qaX9TJD0KFmv43uQdhfXqd4OLBgDU61w5PfrNdGFgxHrlBZwOvrHWiLhpZG0uNM+P0/MUfiV2n1hggsVUvhs/sJPW4rxmGFp0FfLVBdEr4zqVw+RjAKdMwQ==', 'filename': 'test.txt', 'message': 'File downloaded successfully'}
+2025-04-12 15:57:32,853 - ERROR - Request error to get_public_key: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/get_public_key
+2025-04-12 16:00:44,004 - INFO - Request to login with data {'username': 'test', 'password': 'test'} returned: {'message': 'Login successful'}
+2025-04-12 16:00:48,162 - INFO - Request to get_public_key with data {'username': 'test2'} returned: {'public_key': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1fRZj4Q5w8IyfIZBfbq4\n6Q+LBE5PFJMCNzbP3+vVw32wdATmiEZ6iYBVDW/Z7Z+cv0WloIGZTfCHbeL8a55P\nMLmqPHDcekGx9l4giDn5LpfMyRQNyVqsK+xXdy1ZujElLL6d3P+DuiNhdLqKtzn1\nWMw810d0BGn3vXb4/pql0vo+gOxXKsuYE1OXFtC/HIWieStWSEWFqEanSX43+pDh\njAo/e0tBAYxnW/MkoLFiSJQpyPsJvsVLkFX2B0P8pS1f6gYLkiY0PyVopvGBifH8\nlkUl0V8TVi+gMCm8hPYoRFHpBAoqsxcOFr/st2wDuz15Vq0bZf4vFg3Vk4UoxLBf\n3QIDAQAB\n-----END PUBLIC KEY-----\n'}
+2025-04-12 16:00:48,196 - INFO - Request to download with data {'username': 'test', 'file_id': '1'} returned: {'encrypted_content': 'gAAAAABn-hzQG91mYB8pW_0yP2ORt5yXB658s8NBt3e_4G_7fuEDxMdIiklLM7QAIO7KMWUXmy7EbFfpVN1QXh9yld8vr1fOvw==', 'encrypted_key': 'kIoY2GK554AC1W91fqn7W+8W77dKYAV62ARsZ7egRPb+CqjD/uZIiHsnxlIhZ0CtkbWMnutIG1nADb+tSSjUnZcfAFCAWWr88pArIeF3RzCwgPUbmy9cozYigKMU4ZcDUkipwqoKOk0iQnBbmuA8kg2VwxxTkRWlPSSSlx9EC8IqUVXf5WG18755+yOyJ6fybuchz0R2ionoN7ulkpzhtplxlyl+mf2qaX9TJD0KFmv43uQdhfXqd4OLBgDU61w5PfrNdGFgxHrlBZwOvrHWiLhpZG0uNM+P0/MUfiV2n1hggsVUvhs/sJPW4rxmGFp0FfLVBdEr4zqVw+RjAKdMwQ==', 'filename': 'test.txt', 'message': 'File downloaded successfully'}
+2025-04-12 16:00:48,209 - INFO - Request to share with data {'username': 'test', 'file_id': '1', 'shared_with': 'test2', 'encrypted_key': '1RUZdKtGoYOgoS2waDKYDX2qHLpxWw4E7KuI/oF7ADTK8nmnEbSV4iTc5TFtdoM9i77O2l/QCJo70LvP/mJi8siOJxFWb6XBAELjq9/vXMlzNtDbFGf0cqTmZaVTJRmuz120rjw6eGSF6ZWi7EKY9U/62jqOmHHJu73XlsMarEhI6HTHYy74S6eTfNHZpsKUQ4Cy+U5dmTwUKV51xF1zoV0du1iR6KF3nkcrV7i33M+imlw+Ixxi8ELqFoVJDEq9N8jbl2kGH0zwVMeRBi3iJO8D6ewJrVtKgZTDe7Yi6Na8JqVYK6uGT7cjiOFneZvpxbamP1yejTv34zWwIOmFcw=='} returned: {'message': 'File shared successfully'}
+2025-04-12 16:01:09,450 - INFO - Request to login with data {'username': 'test2', 'password': 'test2'} returned: {'message': 'Login successful'}
+2025-04-12 16:01:12,700 - INFO - Request to download with data {'username': 'test2', 'file_id': '1'} returned: {'encrypted_content': 'gAAAAABn-hzQG91mYB8pW_0yP2ORt5yXB658s8NBt3e_4G_7fuEDxMdIiklLM7QAIO7KMWUXmy7EbFfpVN1QXh9yld8vr1fOvw==', 'encrypted_key': '1RUZdKtGoYOgoS2waDKYDX2qHLpxWw4E7KuI/oF7ADTK8nmnEbSV4iTc5TFtdoM9i77O2l/QCJo70LvP/mJi8siOJxFWb6XBAELjq9/vXMlzNtDbFGf0cqTmZaVTJRmuz120rjw6eGSF6ZWi7EKY9U/62jqOmHHJu73XlsMarEhI6HTHYy74S6eTfNHZpsKUQ4Cy+U5dmTwUKV51xF1zoV0du1iR6KF3nkcrV7i33M+imlw+Ixxi8ELqFoVJDEq9N8jbl2kGH0zwVMeRBi3iJO8D6ewJrVtKgZTDe7Yi6Na8JqVYK6uGT7cjiOFneZvpxbamP1yejTv34zWwIOmFcw==', 'filename': 'test.txt', 'message': 'File downloaded successfully'}

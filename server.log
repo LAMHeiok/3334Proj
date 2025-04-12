@@ -114,3 +114,261 @@ TypeError: token must be bytes or str
 2025-04-11 10:57:59,998 - INFO - 127.0.0.1 - - [11/Apr/2025 10:57:59] "POST /register HTTP/1.1" 200 -
 2025-04-11 10:58:04,947 - INFO - User logged in: t
 2025-04-11 10:58:04,948 - INFO - 127.0.0.1 - - [11/Apr/2025 10:58:04] "POST /login HTTP/1.1" 200 -
+2025-04-11 20:44:15,410 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 20:44:15,410 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 21:18:21,984 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 21:18:21,984 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 21:24:54,075 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 21:24:54,075 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 21:25:22,306 - INFO - 127.0.0.1 - - [11/Apr/2025 21:25:22] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-11 21:25:26,020 - INFO - New user registered: test
+2025-04-11 21:25:26,020 - INFO - 127.0.0.1 - - [11/Apr/2025 21:25:26] "POST /register HTTP/1.1" 200 -
+2025-04-11 21:25:28,979 - INFO - User logged in: test
+2025-04-11 21:25:28,979 - INFO - 127.0.0.1 - - [11/Apr/2025 21:25:28] "POST /login HTTP/1.1" 200 -
+2025-04-11 22:57:39,349 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 22:57:39,349 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 22:58:21,403 - INFO - 127.0.0.1 - - [11/Apr/2025 22:58:21] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-11 22:58:25,043 - INFO - New user registered: test
+2025-04-11 22:58:25,043 - INFO - 127.0.0.1 - - [11/Apr/2025 22:58:25] "POST /register HTTP/1.1" 200 -
+2025-04-11 22:58:29,677 - INFO - User logged in: test
+2025-04-11 22:58:29,677 - INFO - 127.0.0.1 - - [11/Apr/2025 22:58:29] "POST /login HTTP/1.1" 200 -
+2025-04-11 22:59:59,362 - INFO - User logged in: test
+2025-04-11 22:59:59,363 - INFO - 127.0.0.1 - - [11/Apr/2025 22:59:59] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:10:05,138 - INFO - 127.0.0.1 - - [11/Apr/2025 23:10:05] "[33mGET / HTTP/1.1[0m" 404 -
+2025-04-11 23:10:05,253 - INFO - 127.0.0.1 - - [11/Apr/2025 23:10:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-11 23:14:18,689 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:14:18,689 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:14:38,787 - INFO - 127.0.0.1 - - [11/Apr/2025 23:14:38] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-11 23:14:42,253 - INFO - New user registered: test
+2025-04-11 23:14:42,254 - INFO - 127.0.0.1 - - [11/Apr/2025 23:14:42] "POST /register HTTP/1.1" 200 -
+2025-04-11 23:14:45,401 - INFO - User logged in: test
+2025-04-11 23:14:45,402 - INFO - 127.0.0.1 - - [11/Apr/2025 23:14:45] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:20:03,736 - INFO - User logged in: test
+2025-04-11 23:20:03,736 - INFO - 127.0.0.1 - - [11/Apr/2025 23:20:03] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:20:45,326 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:20:45,326 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:21:02,183 - INFO - User logged in: test
+2025-04-11 23:21:02,184 - INFO - 127.0.0.1 - - [11/Apr/2025 23:21:02] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:21:05,037 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-11 23:21:05,037 - INFO - 127.0.0.1 - - [11/Apr/2025 23:21:05] "POST /upload HTTP/1.1" 200 -
+2025-04-11 23:21:16,188 - INFO - 127.0.0.1 - - [11/Apr/2025 23:21:16] "POST /download HTTP/1.1" 200 -
+2025-04-11 23:25:56,320 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:25:56,320 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:26:50,038 - INFO - User logged in: test
+2025-04-11 23:26:50,039 - INFO - 127.0.0.1 - - [11/Apr/2025 23:26:50] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:26:52,154 - INFO - 127.0.0.1 - - [11/Apr/2025 23:26:52] "POST /download HTTP/1.1" 200 -
+2025-04-11 23:28:00,290 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:28:00,290 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:28:15,325 - INFO - User logged in: test
+2025-04-11 23:28:15,325 - INFO - 127.0.0.1 - - [11/Apr/2025 23:28:15] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:28:17,772 - INFO - 127.0.0.1 - - [11/Apr/2025 23:28:17] "POST /download HTTP/1.1" 200 -
+2025-04-11 23:30:22,466 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:30:22,466 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:30:36,228 - INFO - 127.0.0.1 - - [11/Apr/2025 23:30:36] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-11 23:30:39,125 - INFO - New user registered: test
+2025-04-11 23:30:39,125 - INFO - 127.0.0.1 - - [11/Apr/2025 23:30:39] "POST /register HTTP/1.1" 200 -
+2025-04-11 23:30:41,899 - INFO - User logged in: test
+2025-04-11 23:30:41,899 - INFO - 127.0.0.1 - - [11/Apr/2025 23:30:41] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:30:45,305 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-11 23:30:45,306 - INFO - 127.0.0.1 - - [11/Apr/2025 23:30:45] "POST /upload HTTP/1.1" 200 -
+2025-04-11 23:30:50,671 - INFO - 127.0.0.1 - - [11/Apr/2025 23:30:50] "POST /download HTTP/1.1" 200 -
+2025-04-11 23:35:00,853 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:35:00,853 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:35:16,975 - INFO - User logged in: test
+2025-04-11 23:35:16,975 - INFO - 127.0.0.1 - - [11/Apr/2025 23:35:16] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:35:29,363 - INFO - New user registered: test2
+2025-04-11 23:35:29,364 - INFO - 127.0.0.1 - - [11/Apr/2025 23:35:29] "POST /register HTTP/1.1" 200 -
+2025-04-11 23:35:35,430 - INFO - User logged in: test2
+2025-04-11 23:35:35,430 - INFO - 127.0.0.1 - - [11/Apr/2025 23:35:35] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:35:46,478 - INFO - File 1 shared by test with test2
+2025-04-11 23:35:46,479 - INFO - 127.0.0.1 - - [11/Apr/2025 23:35:46] "POST /share HTTP/1.1" 200 -
+2025-04-11 23:37:03,221 - INFO - 127.0.0.1 - - [11/Apr/2025 23:37:03] "POST /download HTTP/1.1" 200 -
+2025-04-11 23:40:47,829 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:40:47,829 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:41:00,986 - INFO - User logged in: test
+2025-04-11 23:41:00,986 - INFO - 127.0.0.1 - - [11/Apr/2025 23:41:00] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:41:15,767 - INFO - User logged in: test2
+2025-04-11 23:41:15,767 - INFO - 127.0.0.1 - - [11/Apr/2025 23:41:15] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:41:22,340 - INFO - 127.0.0.1 - - [11/Apr/2025 23:41:22] "POST /download HTTP/1.1" 200 -
+2025-04-11 23:41:46,176 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:41:46,176 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:42:02,340 - INFO - 127.0.0.1 - - [11/Apr/2025 23:42:02] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-11 23:42:05,102 - INFO - New user registered: test
+2025-04-11 23:42:05,103 - INFO - 127.0.0.1 - - [11/Apr/2025 23:42:05] "POST /register HTTP/1.1" 200 -
+2025-04-11 23:42:07,158 - INFO - User logged in: test
+2025-04-11 23:42:07,158 - INFO - 127.0.0.1 - - [11/Apr/2025 23:42:07] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:42:11,079 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-11 23:42:11,079 - INFO - 127.0.0.1 - - [11/Apr/2025 23:42:11] "POST /upload HTTP/1.1" 200 -
+2025-04-11 23:42:21,726 - INFO - New user registered: test2
+2025-04-11 23:42:21,727 - INFO - 127.0.0.1 - - [11/Apr/2025 23:42:21] "POST /register HTTP/1.1" 200 -
+2025-04-11 23:42:25,476 - INFO - User logged in: test2
+2025-04-11 23:42:25,476 - INFO - 127.0.0.1 - - [11/Apr/2025 23:42:25] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:42:33,520 - INFO - File 1 shared by test with test2
+2025-04-11 23:42:33,520 - INFO - 127.0.0.1 - - [11/Apr/2025 23:42:33] "POST /share HTTP/1.1" 200 -
+2025-04-11 23:50:11,898 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-11 23:50:11,899 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-11 23:50:31,485 - INFO - User logged in: test2
+2025-04-11 23:50:31,485 - INFO - 127.0.0.1 - - [11/Apr/2025 23:50:31] "POST /login HTTP/1.1" 200 -
+2025-04-11 23:50:37,569 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\server.py", line 142, in download_file
+    c.execute('''SELECT filename, encrypted_content, encrypted_key
+sqlite3.OperationalError: no such column: encrypted_key
+2025-04-11 23:50:37,572 - INFO - 127.0.0.1 - - [11/Apr/2025 23:50:37] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-12 02:06:01,036 - INFO - User logged in: test
+2025-04-12 02:06:01,037 - INFO - 127.0.0.1 - - [12/Apr/2025 02:06:01] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:06:19,571 - INFO - User logged in: test2
+2025-04-12 02:06:19,571 - INFO - 127.0.0.1 - - [12/Apr/2025 02:06:19] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:06:21,820 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\server.py", line 142, in download_file
+    c.execute('''SELECT filename, encrypted_content, encrypted_key
+sqlite3.OperationalError: no such column: encrypted_key
+2025-04-12 02:06:21,821 - INFO - 127.0.0.1 - - [12/Apr/2025 02:06:21] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-12 02:06:29,852 - ERROR - Exception on /upload [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\.venv\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\User\Desktop\comp3334_gp\3334Proj\server.py", line 112, in upload_file
+    c.execute('SELECT public_key FROM users WHERE username=?', (username,))
+sqlite3.OperationalError: no such column: public_key
+2025-04-12 02:06:29,854 - INFO - 127.0.0.1 - - [12/Apr/2025 02:06:29] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2025-04-12 02:07:16,417 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 02:07:16,417 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 02:07:32,399 - INFO - New user registered: test
+2025-04-12 02:07:32,399 - INFO - 127.0.0.1 - - [12/Apr/2025 02:07:32] "POST /register HTTP/1.1" 200 -
+2025-04-12 02:07:35,682 - INFO - User logged in: test
+2025-04-12 02:07:35,683 - INFO - 127.0.0.1 - - [12/Apr/2025 02:07:35] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:07:38,229 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-12 02:07:38,230 - INFO - 127.0.0.1 - - [12/Apr/2025 02:07:38] "POST /upload HTTP/1.1" 200 -
+2025-04-12 02:07:47,753 - INFO - New user registered: test2
+2025-04-12 02:07:47,754 - INFO - 127.0.0.1 - - [12/Apr/2025 02:07:47] "POST /register HTTP/1.1" 200 -
+2025-04-12 02:08:01,077 - INFO - User logged in: test2
+2025-04-12 02:08:01,077 - INFO - 127.0.0.1 - - [12/Apr/2025 02:08:01] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:08:07,706 - INFO - 127.0.0.1 - - [12/Apr/2025 02:08:07] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:08:33,900 - INFO - 127.0.0.1 - - [12/Apr/2025 02:08:33] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:09:00,098 - INFO - 127.0.0.1 - - [12/Apr/2025 02:09:00] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:09:11,201 - INFO - 127.0.0.1 - - [12/Apr/2025 02:09:11] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:09:22,573 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-12 02:09:22,574 - INFO - 127.0.0.1 - - [12/Apr/2025 02:09:22] "POST /upload HTTP/1.1" 200 -
+2025-04-12 02:09:31,404 - INFO - 127.0.0.1 - - [12/Apr/2025 02:09:31] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:14:47,690 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 02:14:47,690 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 02:15:11,606 - INFO - User logged in: test2
+2025-04-12 02:15:11,607 - INFO - 127.0.0.1 - - [12/Apr/2025 02:15:11] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:15:20,401 - INFO - User logged in: test
+2025-04-12 02:15:20,401 - INFO - 127.0.0.1 - - [12/Apr/2025 02:15:20] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:15:26,396 - INFO - 127.0.0.1 - - [12/Apr/2025 02:15:26] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:15:32,294 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-12 02:15:32,294 - INFO - 127.0.0.1 - - [12/Apr/2025 02:15:32] "POST /upload HTTP/1.1" 200 -
+2025-04-12 02:15:37,424 - INFO - 127.0.0.1 - - [12/Apr/2025 02:15:37] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:16:11,362 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 02:16:11,362 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 02:16:26,895 - INFO - New user registered: test
+2025-04-12 02:16:26,896 - INFO - 127.0.0.1 - - [12/Apr/2025 02:16:26] "POST /register HTTP/1.1" 200 -
+2025-04-12 02:16:30,322 - INFO - User logged in: test
+2025-04-12 02:16:30,322 - INFO - 127.0.0.1 - - [12/Apr/2025 02:16:30] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:16:33,781 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-12 02:16:33,782 - INFO - 127.0.0.1 - - [12/Apr/2025 02:16:33] "POST /upload HTTP/1.1" 200 -
+2025-04-12 02:16:39,389 - INFO - 127.0.0.1 - - [12/Apr/2025 02:16:39] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:18:32,679 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 02:18:32,679 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 02:18:49,992 - INFO - User logged in: test
+2025-04-12 02:18:49,992 - INFO - 127.0.0.1 - - [12/Apr/2025 02:18:49] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:18:53,016 - INFO - 127.0.0.1 - - [12/Apr/2025 02:18:53] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:19:21,494 - INFO - New user registered: test2
+2025-04-12 02:19:21,494 - INFO - 127.0.0.1 - - [12/Apr/2025 02:19:21] "POST /register HTTP/1.1" 200 -
+2025-04-12 02:19:24,947 - INFO - User logged in: test2
+2025-04-12 02:19:24,948 - INFO - 127.0.0.1 - - [12/Apr/2025 02:19:24] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:19:33,409 - INFO - 127.0.0.1 - - [12/Apr/2025 02:19:33] "[33mPOST /get_public_key HTTP/1.1[0m" 404 -
+2025-04-12 02:24:37,172 - INFO - 127.0.0.1 - - [12/Apr/2025 02:24:37] "[33mPOST /get_public_key HTTP/1.1[0m" 404 -
+2025-04-12 02:26:19,494 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 02:26:19,494 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 02:26:31,743 - INFO - User logged in: test2
+2025-04-12 02:26:31,743 - INFO - 127.0.0.1 - - [12/Apr/2025 02:26:31] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:26:38,494 - INFO - User logged in: test
+2025-04-12 02:26:38,494 - INFO - 127.0.0.1 - - [12/Apr/2025 02:26:38] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:26:42,930 - INFO - 127.0.0.1 - - [12/Apr/2025 02:26:42] "[33mPOST /get_public_key HTTP/1.1[0m" 404 -
+2025-04-12 02:28:33,288 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 02:28:33,288 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 02:28:44,108 - INFO - New user registered: test
+2025-04-12 02:28:44,108 - INFO - 127.0.0.1 - - [12/Apr/2025 02:28:44] "POST /register HTTP/1.1" 200 -
+2025-04-12 02:28:46,653 - INFO - User logged in: test
+2025-04-12 02:28:46,654 - INFO - 127.0.0.1 - - [12/Apr/2025 02:28:46] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:28:49,078 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-12 02:28:49,078 - INFO - 127.0.0.1 - - [12/Apr/2025 02:28:49] "POST /upload HTTP/1.1" 200 -
+2025-04-12 02:28:54,320 - INFO - 127.0.0.1 - - [12/Apr/2025 02:28:54] "POST /download HTTP/1.1" 200 -
+2025-04-12 02:29:03,180 - INFO - New user registered: test2
+2025-04-12 02:29:03,180 - INFO - 127.0.0.1 - - [12/Apr/2025 02:29:03] "POST /register HTTP/1.1" 200 -
+2025-04-12 02:29:08,856 - INFO - 127.0.0.1 - - [12/Apr/2025 02:29:08] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-12 02:29:13,907 - INFO - User logged in: test2
+2025-04-12 02:29:13,907 - INFO - 127.0.0.1 - - [12/Apr/2025 02:29:13] "POST /login HTTP/1.1" 200 -
+2025-04-12 02:29:22,575 - INFO - 127.0.0.1 - - [12/Apr/2025 02:29:22] "[33mPOST /get_public_key HTTP/1.1[0m" 404 -
+2025-04-12 15:55:02,681 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 15:55:02,681 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 15:56:02,635 - INFO - New user registered: test
+2025-04-12 15:56:02,635 - INFO - 127.0.0.1 - - [12/Apr/2025 15:56:02] "POST /register HTTP/1.1" 200 -
+2025-04-12 15:56:05,672 - INFO - User logged in: test
+2025-04-12 15:56:05,672 - INFO - 127.0.0.1 - - [12/Apr/2025 15:56:05] "POST /login HTTP/1.1" 200 -
+2025-04-12 15:56:55,746 - INFO - New user registered: test2
+2025-04-12 15:56:55,747 - INFO - 127.0.0.1 - - [12/Apr/2025 15:56:55] "POST /register HTTP/1.1" 200 -
+2025-04-12 15:56:58,738 - INFO - User logged in: test2
+2025-04-12 15:56:58,738 - INFO - 127.0.0.1 - - [12/Apr/2025 15:56:58] "POST /login HTTP/1.1" 200 -
+2025-04-12 15:57:04,564 - INFO - File uploaded by user: test, filename: test.txt
+2025-04-12 15:57:04,564 - INFO - 127.0.0.1 - - [12/Apr/2025 15:57:04] "POST /upload HTTP/1.1" 200 -
+2025-04-12 15:57:12,873 - INFO - 127.0.0.1 - - [12/Apr/2025 15:57:12] "POST /download HTTP/1.1" 200 -
+2025-04-12 15:57:32,852 - INFO - 127.0.0.1 - - [12/Apr/2025 15:57:32] "[33mPOST /get_public_key HTTP/1.1[0m" 404 -
+2025-04-12 16:00:31,934 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-12 16:00:31,934 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-12 16:00:44,003 - INFO - User logged in: test
+2025-04-12 16:00:44,003 - INFO - 127.0.0.1 - - [12/Apr/2025 16:00:44] "POST /login HTTP/1.1" 200 -
+2025-04-12 16:00:48,162 - INFO - 127.0.0.1 - - [12/Apr/2025 16:00:48] "POST /get_public_key HTTP/1.1" 200 -
+2025-04-12 16:00:48,196 - INFO - 127.0.0.1 - - [12/Apr/2025 16:00:48] "POST /download HTTP/1.1" 200 -
+2025-04-12 16:00:48,209 - INFO - File 1 shared by test with test2
+2025-04-12 16:00:48,209 - INFO - 127.0.0.1 - - [12/Apr/2025 16:00:48] "POST /share HTTP/1.1" 200 -
+2025-04-12 16:01:09,449 - INFO - User logged in: test2
+2025-04-12 16:01:09,449 - INFO - 127.0.0.1 - - [12/Apr/2025 16:01:09] "POST /login HTTP/1.1" 200 -
+2025-04-12 16:01:12,699 - INFO - 127.0.0.1 - - [12/Apr/2025 16:01:12] "POST /download HTTP/1.1" 200 -
