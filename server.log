@@ -551,3 +551,165 @@ sqlite3.OperationalError: database is locked
 2025-04-12 22:18:21,869 - INFO - New user registered: v2
 2025-04-12 22:18:21,870 - INFO - 127.0.0.1 - - [12/Apr/2025 22:18:21] "POST /register HTTP/1.1" 200 -
 2025-04-12 22:18:25,511 - INFO - 127.0.0.1 - - [12/Apr/2025 22:18:25] "[33mPOST /login HTTP/1.1[0m" 404 -
+2025-04-13 15:35:40,490 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 15:35:40,490 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 15:36:07,103 - INFO - 127.0.0.1 - - [13/Apr/2025 15:36:07] "[33mPOST /register HTTP/1.1[0m" 404 -
+2025-04-13 15:42:11,256 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 15:42:11,256 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 15:42:53,731 - INFO - New user registered: t
+2025-04-13 15:42:53,732 - INFO - 127.0.0.1 - - [13/Apr/2025 15:42:53] "POST /register HTTP/1.1" 200 -
+2025-04-13 15:45:30,053 - INFO - 127.0.0.1 - - [13/Apr/2025 15:45:30] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-13 15:45:47,137 - INFO - User logged in: t
+2025-04-13 15:45:47,138 - INFO - 127.0.0.1 - - [13/Apr/2025 15:45:47] "POST /login HTTP/1.1" 200 -
+2025-04-13 15:49:18,022 - INFO - User logged in: t
+2025-04-13 15:49:18,022 - INFO - 127.0.0.1 - - [13/Apr/2025 15:49:18] "POST /login HTTP/1.1" 200 -
+2025-04-13 15:49:43,870 - INFO - 127.0.0.1 - - [13/Apr/2025 15:49:43] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-13 15:49:55,329 - INFO - User logged in: t
+2025-04-13 15:49:55,329 - INFO - 127.0.0.1 - - [13/Apr/2025 15:49:55] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:00:47,546 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:00:47,546 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:01:01,828 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:01:01,829 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:01:19,765 - INFO - User logged in: t
+2025-04-13 16:01:19,765 - INFO - 127.0.0.1 - - [13/Apr/2025 16:01:19] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:06:36,943 - INFO - 127.0.0.1 - - [13/Apr/2025 16:06:36] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-13 16:06:46,877 - INFO - User logged in: t
+2025-04-13 16:06:46,878 - INFO - 127.0.0.1 - - [13/Apr/2025 16:06:46] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:14:58,735 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:14:58,736 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:15:19,044 - INFO - User logged in: t
+2025-04-13 16:15:19,044 - INFO - 127.0.0.1 - - [13/Apr/2025 16:15:19] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:19:28,573 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:19:28,573 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:20:03,007 - INFO - User logged in: t
+2025-04-13 16:20:03,008 - INFO - 127.0.0.1 - - [13/Apr/2025 16:20:03] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:21:58,401 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:21:58,401 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:22:32,606 - INFO - 127.0.0.1 - - [13/Apr/2025 16:22:32] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-13 16:22:42,043 - INFO - User logged in: t
+2025-04-13 16:22:42,044 - INFO - 127.0.0.1 - - [13/Apr/2025 16:22:42] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:26:04,147 - INFO - User logged in: t
+2025-04-13 16:26:04,147 - INFO - 127.0.0.1 - - [13/Apr/2025 16:26:04] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:26:07,315 - ERROR - FIDO2 register_begin failed: Fido2Server.register_begin() missing 1 required positional argument: 'user'
+2025-04-13 16:26:07,315 - INFO - 127.0.0.1 - - [13/Apr/2025 16:26:07] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:27:59,557 - ERROR - FIDO2 register_begin failed: Fido2Server.register_begin() missing 1 required positional argument: 'user'
+2025-04-13 16:27:59,558 - INFO - 127.0.0.1 - - [13/Apr/2025 16:27:59] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:28:00,726 - ERROR - FIDO2 register_begin failed: Fido2Server.register_begin() missing 1 required positional argument: 'user'
+2025-04-13 16:28:00,726 - INFO - 127.0.0.1 - - [13/Apr/2025 16:28:00] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:28:13,876 - INFO - 127.0.0.1 - - [13/Apr/2025 16:28:13] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-13 16:28:20,505 - INFO - User logged in: t
+2025-04-13 16:28:20,505 - INFO - 127.0.0.1 - - [13/Apr/2025 16:28:20] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:28:23,381 - ERROR - FIDO2 register_begin failed: Fido2Server.register_begin() missing 1 required positional argument: 'user'
+2025-04-13 16:28:23,381 - INFO - 127.0.0.1 - - [13/Apr/2025 16:28:23] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:30:03,905 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:30:03,905 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:30:22,684 - INFO - User logged in: t
+2025-04-13 16:30:22,685 - INFO - 127.0.0.1 - - [13/Apr/2025 16:30:22] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:30:25,302 - ERROR - FIDO2 register_begin failed: Fido2Server.register_begin() missing 1 required positional argument: 'user'
+2025-04-13 16:30:25,302 - INFO - 127.0.0.1 - - [13/Apr/2025 16:30:25] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:32:09,758 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:32:09,758 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:32:12,692 - ERROR - FIDO2 register_begin failed: 'CredentialCreationOptions' object has no attribute 'pub_key_cred_params'
+2025-04-13 16:32:12,692 - INFO - 127.0.0.1 - - [13/Apr/2025 16:32:12] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:33:02,621 - INFO - User logged in: t
+2025-04-13 16:33:02,621 - INFO - 127.0.0.1 - - [13/Apr/2025 16:33:02] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:33:04,789 - ERROR - FIDO2 register_begin failed: 'CredentialCreationOptions' object has no attribute 'pub_key_cred_params'
+2025-04-13 16:33:04,789 - INFO - 127.0.0.1 - - [13/Apr/2025 16:33:04] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:33:16,293 - INFO - 127.0.0.1 - - [13/Apr/2025 16:33:16] "[31m[1mPOST /register HTTP/1.1[0m" 400 -
+2025-04-13 16:33:24,237 - INFO - New user registered: t1
+2025-04-13 16:33:24,237 - INFO - 127.0.0.1 - - [13/Apr/2025 16:33:24] "POST /register HTTP/1.1" 200 -
+2025-04-13 16:34:30,574 - INFO - New user registered: t3
+2025-04-13 16:34:30,574 - INFO - 127.0.0.1 - - [13/Apr/2025 16:34:30] "POST /register HTTP/1.1" 200 -
+2025-04-13 16:35:09,323 - INFO - 127.0.0.1 - - [13/Apr/2025 16:35:09] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-13 16:35:18,633 - INFO - User logged in: t3
+2025-04-13 16:35:18,633 - INFO - 127.0.0.1 - - [13/Apr/2025 16:35:18] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:35:20,836 - ERROR - FIDO2 register_begin failed: 'CredentialCreationOptions' object has no attribute 'pub_key_cred_params'
+2025-04-13 16:35:20,837 - INFO - 127.0.0.1 - - [13/Apr/2025 16:35:20] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:37:30,045 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:37:30,045 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:37:49,310 - INFO - User logged in: t3
+2025-04-13 16:37:49,310 - INFO - 127.0.0.1 - - [13/Apr/2025 16:37:49] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:37:52,805 - ERROR - FIDO2 register_begin failed: 'CredentialCreationOptions' object has no attribute 'timeout'
+2025-04-13 16:37:52,805 - INFO - 127.0.0.1 - - [13/Apr/2025 16:37:52] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:39:14,032 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:39:14,032 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:39:26,189 - INFO - User logged in: t
+2025-04-13 16:39:26,190 - INFO - 127.0.0.1 - - [13/Apr/2025 16:39:26] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:39:27,924 - ERROR - FIDO2 register_begin failed: 'CredentialCreationOptions' object has no attribute 'attestation'
+2025-04-13 16:39:27,924 - INFO - 127.0.0.1 - - [13/Apr/2025 16:39:27] "[35m[1mPOST /fido2/register_begin HTTP/1.1[0m" 500 -
+2025-04-13 16:40:52,910 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:40:52,910 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:40:56,982 - INFO - 127.0.0.1 - - [13/Apr/2025 16:40:56] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:40:58,517 - INFO - 127.0.0.1 - - [13/Apr/2025 16:40:58] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:41:11,340 - INFO - User logged in: t
+2025-04-13 16:41:11,340 - INFO - 127.0.0.1 - - [13/Apr/2025 16:41:11] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:41:12,981 - INFO - 127.0.0.1 - - [13/Apr/2025 16:41:12] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:42:15,791 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:42:15,792 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:42:26,492 - INFO - New user registered: t
+2025-04-13 16:42:26,493 - INFO - 127.0.0.1 - - [13/Apr/2025 16:42:26] "POST /register HTTP/1.1" 200 -
+2025-04-13 16:43:13,161 - INFO - User logged in: t
+2025-04-13 16:43:13,161 - INFO - 127.0.0.1 - - [13/Apr/2025 16:43:13] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:43:15,254 - INFO - 127.0.0.1 - - [13/Apr/2025 16:43:15] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:44:37,435 - INFO - User logged in: t
+2025-04-13 16:44:37,435 - INFO - 127.0.0.1 - - [13/Apr/2025 16:44:37] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:44:38,742 - INFO - 127.0.0.1 - - [13/Apr/2025 16:44:38] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:44:38,770 - ERROR - FIDO2 register_complete failed: 'bytes' object has no attribute 'type'
+2025-04-13 16:44:38,771 - INFO - 127.0.0.1 - - [13/Apr/2025 16:44:38] "[31m[1mPOST /fido2/register_complete HTTP/1.1[0m" 400 -
+2025-04-13 16:46:01,990 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:46:01,990 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:46:10,803 - INFO - 127.0.0.1 - - [13/Apr/2025 16:46:10] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:46:10,807 - ERROR - FIDO2 register_complete failed: 'bytes' object has no attribute 'type'
+2025-04-13 16:46:10,808 - INFO - 127.0.0.1 - - [13/Apr/2025 16:46:10] "[31m[1mPOST /fido2/register_complete HTTP/1.1[0m" 400 -
+2025-04-13 16:46:21,459 - INFO - 127.0.0.1 - - [13/Apr/2025 16:46:21] "[31m[1mPOST /fido2/authenticate_begin HTTP/1.1[0m" 400 -
+2025-04-13 16:46:34,061 - INFO - User logged in: t
+2025-04-13 16:46:34,061 - INFO - 127.0.0.1 - - [13/Apr/2025 16:46:34] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:46:36,012 - INFO - 127.0.0.1 - - [13/Apr/2025 16:46:36] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:46:36,074 - ERROR - FIDO2 register_complete failed: 'bytes' object has no attribute 'type'
+2025-04-13 16:46:36,074 - INFO - 127.0.0.1 - - [13/Apr/2025 16:46:36] "[31m[1mPOST /fido2/register_complete HTTP/1.1[0m" 400 -
+2025-04-13 16:49:40,908 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:49:40,909 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:49:53,227 - INFO - User logged in: t
+2025-04-13 16:49:53,227 - INFO - 127.0.0.1 - - [13/Apr/2025 16:49:53] "POST /login HTTP/1.1" 200 -
+2025-04-13 16:49:56,854 - INFO - 127.0.0.1 - - [13/Apr/2025 16:49:56] "POST /fido2/register_begin HTTP/1.1" 200 -
+2025-04-13 16:49:56,858 - INFO - Received credential_data: {
+  "id": "diUg4Gy4pA4jVSVCzv/NOp0i+DId7l1JVhrchETqQOQ=",
+  "rawId": "diUg4Gy4pA4jVSVCzv/NOp0i+DId7l1JVhrchETqQOQ=",
+  "type": "public-key",
+  "response": {
+    "clientDataJSON": "eyJ0eXBlIjogIndlYmF1dGhuLmNyZWF0ZSIsICJjaGFsbGVuZ2UiOiAiTEwxcEhKOUhWaldzSnlIMlQyeHg0Zi1qUW94SlppWl9OOWl2YUVTUGxzcyIsICJvcmlnaW4iOiAiaHR0cDovLzEyNy4wLjAuMTo1MDAwIn0=",
+    "attestationObject": "o2NmbXRkbm9uZWdhdHRTdG10oGhhdXRoRGF0YVikEsoXtJryKJQ28wPgFmAwoh5SXSZuIJJnQzgBqP1AcaBBAAAAAAAAAAAAAAAAAAAAAAAAAAAAIHYlIOBsuKQOI1UlQs7/zTqdIvgyHe5dSVYa3IRE6kDkpQECAyYgASFYID43SqiGxLFdT6dzMBVnqWmid7Q7XZGnbhZ7LoRZEMfOIlggfP5EYQwT4/m64OY2Neoyaj+wlueRtbyECsDQvCNkKDU="
+  }
+}
+2025-04-13 16:49:56,858 - ERROR - FIDO2 register_complete failed: 'str' object has no attribute 'type'
+2025-04-13 16:49:56,858 - INFO - 127.0.0.1 - - [13/Apr/2025 16:49:56] "[31m[1mPOST /fido2/register_complete HTTP/1.1[0m" 400 -
+2025-04-13 16:51:51,997 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 16:51:51,997 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 16:52:06,004 - INFO - 127.0.0.1 - - [13/Apr/2025 16:52:06] "[31m[1mPOST /login HTTP/1.1[0m" 400 -
+2025-04-13 16:52:11,082 - INFO - User logged in: t
+2025-04-13 16:52:11,083 - INFO - 127.0.0.1 - - [13/Apr/2025 16:52:11] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:02:15,061 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:02:15,062 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:02:32,917 - INFO - 127.0.0.1 - - [13/Apr/2025 17:02:32] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-13 17:02:45,089 - INFO - 127.0.0.1 - - [13/Apr/2025 17:02:45] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-04-13 17:02:54,858 - INFO - New user registered: t2
+2025-04-13 17:02:54,858 - INFO - 127.0.0.1 - - [13/Apr/2025 17:02:54] "POST /register HTTP/1.1" 200 -
+2025-04-13 17:03:21,913 - INFO - User logged in: t2
+2025-04-13 17:03:21,913 - INFO - 127.0.0.1 - - [13/Apr/2025 17:03:21] "POST /login HTTP/1.1" 200 -

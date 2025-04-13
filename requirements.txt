@@ -2,3 +2,6 @@ cryptography
 flask
 requests
 bcrypt
+fido2
+pyotp
+soft-webauthn
