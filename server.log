@@ -713,3 +713,13 @@ sqlite3.OperationalError: database is locked
 2025-04-13 17:02:54,858 - INFO - 127.0.0.1 - - [13/Apr/2025 17:02:54] "POST /register HTTP/1.1" 200 -
 2025-04-13 17:03:21,913 - INFO - User logged in: t2
 2025-04-13 17:03:21,913 - INFO - 127.0.0.1 - - [13/Apr/2025 17:03:21] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:26:03,146 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:26:03,146 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:27:24,888 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:27:24,888 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:27:46,803 - INFO - New user registered: t
+2025-04-13 17:27:46,804 - INFO - 127.0.0.1 - - [13/Apr/2025 17:27:46] "POST /register HTTP/1.1" 200 -
+2025-04-13 17:28:20,950 - INFO - User logged in: t
+2025-04-13 17:28:20,950 - INFO - 127.0.0.1 - - [13/Apr/2025 17:28:20] "POST /login HTTP/1.1" 200 -

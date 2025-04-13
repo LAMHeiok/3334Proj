@@ -181,35 +181,35 @@ def main():
         print("\nMenu:")
         print("1. Register")
         print("2. Login (Password + TOTP)")
-        print("5. Upload file")
-        print("6. Download file")
-        print("7. Share file")
-        print("8. List files")
-        print("9. Delete file")
-        print("10. Revoke share")
-        print("11. Reset password")
-        print("12. Exit")
+        print("3. Upload file")
+        print("4. Download file")
+        print("5. Share file")
+        print("6. List files")
+        print("7. Delete file")
+        print("8. Revoke share")
+        print("9. Reset password")
+        print("10. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
             client.register()
         elif choice == '2':
             client.login()
-        elif choice == '5':
+        elif choice == '3':
             client.upload_file()
-        elif choice == '6':
+        elif choice == '4':
             client.download_file()
-        elif choice == '7':
+        elif choice == '5':
             client.share_file()
-        elif choice == '8':
+        elif choice == '6':
             client.list_files()
-        elif choice == '9':
+        elif choice == '7':
             client.delete_file()
-        elif choice == '10':
+        elif choice == '8':
             client.revoke_share()
-        elif choice == '11':
+        elif choice == '9':
             client.reset_password()
-        elif choice == '12':
+        elif choice == '10':
             break
         else:
             print("Error: Invalid choice. Please try again.")
