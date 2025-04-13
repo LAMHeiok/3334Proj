@@ -180,7 +180,7 @@ def main():
     while True:
         print("\nMenu:")
         print("1. Register")
-        print("2. Login (Password + TOTP)")
+        print("2. Login")
         print("3. Upload file")
         print("4. Download file")
         print("5. Share file")
