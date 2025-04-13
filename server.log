@@ -723,3 +723,303 @@ sqlite3.OperationalError: database is locked
 2025-04-13 17:27:46,804 - INFO - 127.0.0.1 - - [13/Apr/2025 17:27:46] "POST /register HTTP/1.1" 200 -
 2025-04-13 17:28:20,950 - INFO - User logged in: t
 2025-04-13 17:28:20,950 - INFO - 127.0.0.1 - - [13/Apr/2025 17:28:20] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:34:28,873 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:34:28,873 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:34:46,523 - INFO - New user registered: t
+2025-04-13 17:34:46,523 - INFO - 127.0.0.1 - - [13/Apr/2025 17:34:46] "POST /register HTTP/1.1" 200 -
+2025-04-13 17:35:25,715 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:35:25,715 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:35:42,506 - INFO - New user registered: t1
+2025-04-13 17:35:42,507 - INFO - 127.0.0.1 - - [13/Apr/2025 17:35:42] "POST /register HTTP/1.1" 200 -
+2025-04-13 17:36:17,648 - INFO - User logged in: t1
+2025-04-13 17:36:17,649 - INFO - 127.0.0.1 - - [13/Apr/2025 17:36:17] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:36:26,024 - INFO - 127.0.0.1 - - [13/Apr/2025 17:36:26] "[33mPOST /upload HTTP/1.1[0m" 404 -
+2025-04-13 17:36:45,362 - INFO - User logged in: t1
+2025-04-13 17:36:45,362 - INFO - 127.0.0.1 - - [13/Apr/2025 17:36:45] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:36:47,981 - INFO - 127.0.0.1 - - [13/Apr/2025 17:36:47] "[33mPOST /download HTTP/1.1[0m" 404 -
+2025-04-13 17:38:49,457 - INFO - User logged in: t1
+2025-04-13 17:38:49,457 - INFO - 127.0.0.1 - - [13/Apr/2025 17:38:49] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:38:54,813 - INFO - 127.0.0.1 - - [13/Apr/2025 17:38:54] "[33mPOST /list_files HTTP/1.1[0m" 404 -
+2025-04-13 17:42:50,643 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:42:50,643 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:43:04,473 - INFO - User logged in: t1
+2025-04-13 17:43:04,473 - INFO - 127.0.0.1 - - [13/Apr/2025 17:43:04] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:43:08,680 - INFO - 127.0.0.1 - - [13/Apr/2025 17:43:08] "POST /upload HTTP/1.1" 200 -
+2025-04-13 17:43:17,916 - INFO - 127.0.0.1 - - [13/Apr/2025 17:43:17] "POST /get_public_key HTTP/1.1" 200 -
+2025-04-13 17:43:17,959 - INFO - 127.0.0.1 - - [13/Apr/2025 17:43:17] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:43:17,987 - INFO - 127.0.0.1 - - [13/Apr/2025 17:43:17] "POST /share HTTP/1.1" 200 -
+2025-04-13 17:43:25,043 - INFO - 127.0.0.1 - - [13/Apr/2025 17:43:25] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 17:43:29,246 - INFO - 127.0.0.1 - - [13/Apr/2025 17:43:29] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:47:18,043 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:47:18,043 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:47:27,375 - INFO - Listed files for user: t1
+2025-04-13 17:47:27,375 - INFO - 127.0.0.1 - - [13/Apr/2025 17:47:27] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 17:47:31,071 - INFO - 127.0.0.1 - - [13/Apr/2025 17:47:31] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:47:37,376 - INFO - File 1 deleted by t1
+2025-04-13 17:47:37,376 - INFO - 127.0.0.1 - - [13/Apr/2025 17:47:37] "POST /delete_file HTTP/1.1" 200 -
+2025-04-13 17:47:41,868 - INFO - 127.0.0.1 - - [13/Apr/2025 17:47:41] "POST /upload HTTP/1.1" 200 -
+2025-04-13 17:47:44,048 - INFO - 127.0.0.1 - - [13/Apr/2025 17:47:44] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:47:46,605 - INFO - Listed files for user: t1
+2025-04-13 17:47:46,605 - INFO - 127.0.0.1 - - [13/Apr/2025 17:47:46] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 17:47:52,270 - INFO - 127.0.0.1 - - [13/Apr/2025 17:47:52] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:48:03,197 - INFO - 127.0.0.1 - - [13/Apr/2025 17:48:03] "POST /upload HTTP/1.1" 200 -
+2025-04-13 17:48:06,193 - INFO - 127.0.0.1 - - [13/Apr/2025 17:48:06] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:48:10,771 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:48:10,771 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:54:45,771 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:54:45,771 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:54:52,004 - INFO - 127.0.0.1 - - [13/Apr/2025 17:54:52] "POST /upload HTTP/1.1" 200 -
+2025-04-13 17:54:55,454 - INFO - 127.0.0.1 - - [13/Apr/2025 17:54:55] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:55:13,287 - INFO - User logged in: t1
+2025-04-13 17:55:13,287 - INFO - 127.0.0.1 - - [13/Apr/2025 17:55:13] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:55:19,725 - INFO - 127.0.0.1 - - [13/Apr/2025 17:55:19] "POST /upload HTTP/1.1" 200 -
+2025-04-13 17:55:22,705 - INFO - 127.0.0.1 - - [13/Apr/2025 17:55:22] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:56:44,000 - INFO - User logged in: t1
+2025-04-13 17:56:44,000 - INFO - 127.0.0.1 - - [13/Apr/2025 17:56:44] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:56:52,335 - INFO - 127.0.0.1 - - [13/Apr/2025 17:56:52] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:58:11,285 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:58:11,285 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:58:25,613 - INFO - New user registered: t
+2025-04-13 17:58:25,613 - INFO - 127.0.0.1 - - [13/Apr/2025 17:58:25] "POST /register HTTP/1.1" 200 -
+2025-04-13 17:58:48,296 - INFO - User logged in: t
+2025-04-13 17:58:48,296 - INFO - 127.0.0.1 - - [13/Apr/2025 17:58:48] "POST /login HTTP/1.1" 200 -
+2025-04-13 17:58:52,344 - INFO - 127.0.0.1 - - [13/Apr/2025 17:58:52] "POST /upload HTTP/1.1" 200 -
+2025-04-13 17:58:54,609 - INFO - 127.0.0.1 - - [13/Apr/2025 17:58:54] "POST /download HTTP/1.1" 200 -
+2025-04-13 17:59:44,890 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 17:59:44,891 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 17:59:57,492 - INFO - User logged in: t
+2025-04-13 17:59:57,492 - INFO - 127.0.0.1 - - [13/Apr/2025 17:59:57] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:00:04,860 - INFO - 127.0.0.1 - - [13/Apr/2025 18:00:04] "[33mPOST /get_public_key HTTP/1.1[0m" 404 -
+2025-04-13 18:00:08,814 - INFO - Listed files for user: t
+2025-04-13 18:00:08,814 - INFO - 127.0.0.1 - - [13/Apr/2025 18:00:08] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 18:00:12,555 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ching\Documents\3334Proj\server.py", line 214, in download_file
+    'encrypted_content': base64.b64encode(encrypted_content).decode(),
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+TypeError: a bytes-like object is required, not 'str'
+2025-04-13 18:00:12,557 - INFO - 127.0.0.1 - - [13/Apr/2025 18:00:12] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:00:25,369 - INFO - User logged in: t
+2025-04-13 18:00:25,369 - INFO - 127.0.0.1 - - [13/Apr/2025 18:00:25] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:00:29,994 - INFO - 127.0.0.1 - - [13/Apr/2025 18:00:29] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:00:34,572 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ching\Documents\3334Proj\server.py", line 214, in download_file
+    'encrypted_content': base64.b64encode(encrypted_content).decode(),
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+TypeError: a bytes-like object is required, not 'str'
+2025-04-13 18:00:34,573 - INFO - 127.0.0.1 - - [13/Apr/2025 18:00:34] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:01:54,849 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:01:54,849 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:02:04,207 - INFO - User logged in: t
+2025-04-13 18:02:04,208 - INFO - 127.0.0.1 - - [13/Apr/2025 18:02:04] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:02:08,054 - INFO - 127.0.0.1 - - [13/Apr/2025 18:02:08] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:02:12,475 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ching\Documents\3334Proj\server.py", line 214, in download_file
+    'encrypted_content': base64.b64encode(encrypted_content).decode(),
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+TypeError: a bytes-like object is required, not 'str'
+2025-04-13 18:02:12,478 - INFO - 127.0.0.1 - - [13/Apr/2025 18:02:12] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:03:22,889 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:03:22,889 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:03:29,887 - INFO - User logged in: t
+2025-04-13 18:03:29,888 - INFO - 127.0.0.1 - - [13/Apr/2025 18:03:29] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:03:33,425 - INFO - 127.0.0.1 - - [13/Apr/2025 18:03:33] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:03:37,293 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ching\Documents\3334Proj\server.py", line 208, in download_file
+    'encrypted_content': base64.b64encode(encrypted_content).decode(),
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+TypeError: a bytes-like object is required, not 'str'
+2025-04-13 18:03:37,296 - INFO - 127.0.0.1 - - [13/Apr/2025 18:03:37] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:04:13,262 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ching\Documents\3334Proj\server.py", line 208, in download_file
+    'encrypted_content': base64.b64encode(encrypted_content).decode(),
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+TypeError: a bytes-like object is required, not 'str'
+2025-04-13 18:04:13,263 - INFO - 127.0.0.1 - - [13/Apr/2025 18:04:13] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:05:24,057 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:05:24,057 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:05:33,502 - INFO - User logged in: t
+2025-04-13 18:05:33,502 - INFO - 127.0.0.1 - - [13/Apr/2025 18:05:33] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:05:36,157 - INFO - 127.0.0.1 - - [13/Apr/2025 18:05:36] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:05:49,607 - INFO - 127.0.0.1 - - [13/Apr/2025 18:05:49] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:05:51,822 - INFO - 127.0.0.1 - - [13/Apr/2025 18:05:51] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:05:55,771 - INFO - 127.0.0.1 - - [13/Apr/2025 18:05:55] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:07:11,148 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:07:11,148 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:07:20,128 - INFO - User logged in: t
+2025-04-13 18:07:20,129 - INFO - 127.0.0.1 - - [13/Apr/2025 18:07:20] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:07:25,691 - INFO - 127.0.0.1 - - [13/Apr/2025 18:07:25] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:07:28,349 - INFO - Listed files for user: t
+2025-04-13 18:07:28,349 - INFO - 127.0.0.1 - - [13/Apr/2025 18:07:28] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 18:07:31,564 - INFO - 127.0.0.1 - - [13/Apr/2025 18:07:31] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:08:13,613 - INFO - Listed files for user: t
+2025-04-13 18:08:13,613 - INFO - 127.0.0.1 - - [13/Apr/2025 18:08:13] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 18:08:19,895 - INFO - 127.0.0.1 - - [13/Apr/2025 18:08:19] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:08:24,219 - INFO - 127.0.0.1 - - [13/Apr/2025 18:08:24] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:10:22,125 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:10:22,125 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:10:27,551 - INFO - 127.0.0.1 - - [13/Apr/2025 18:10:27] "POST /download HTTP/1.1" 200 -
+2025-04-13 18:10:40,222 - INFO - User logged in: t
+2025-04-13 18:10:40,222 - INFO - 127.0.0.1 - - [13/Apr/2025 18:10:40] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:11:18,235 - INFO - 127.0.0.1 - - [13/Apr/2025 18:11:18] "POST /download HTTP/1.1" 200 -
+2025-04-13 18:15:34,522 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:15:34,522 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:15:48,494 - INFO - User logged in: t
+2025-04-13 18:15:48,494 - INFO - 127.0.0.1 - - [13/Apr/2025 18:15:48] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:15:54,700 - INFO - 127.0.0.1 - - [13/Apr/2025 18:15:54] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:15:58,107 - INFO - 127.0.0.1 - - [13/Apr/2025 18:15:58] "[33mPOST /download HTTP/1.1[0m" 404 -
+2025-04-13 18:17:08,313 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:17:08,313 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:17:14,907 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: download_file() missing 3 required positional arguments: 'server_url', 'username', and 'file_id'
+2025-04-13 18:17:14,909 - INFO - 127.0.0.1 - - [13/Apr/2025 18:17:14] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:17:23,595 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:17:23,595 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:17:34,396 - INFO - User logged in: t
+2025-04-13 18:17:34,397 - INFO - 127.0.0.1 - - [13/Apr/2025 18:17:34] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:17:36,810 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: download_file() missing 3 required positional arguments: 'server_url', 'username', and 'file_id'
+2025-04-13 18:17:36,812 - INFO - 127.0.0.1 - - [13/Apr/2025 18:17:36] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:18:40,085 - INFO - User logged in: t
+2025-04-13 18:18:40,085 - INFO - 127.0.0.1 - - [13/Apr/2025 18:18:40] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:18:44,137 - ERROR - Exception on /download [POST]
+Traceback (most recent call last):
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ching\Documents\3334Proj\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: download_file() missing 3 required positional arguments: 'server_url', 'username', and 'file_id'
+2025-04-13 18:18:44,138 - INFO - 127.0.0.1 - - [13/Apr/2025 18:18:44] "[35m[1mPOST /download HTTP/1.1[0m" 500 -
+2025-04-13 18:20:17,652 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:20:17,652 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:20:21,565 - INFO - 127.0.0.1 - - [13/Apr/2025 18:20:21] "POST /download HTTP/1.1" 200 -
+2025-04-13 18:20:37,621 - INFO - New user registered: t1
+2025-04-13 18:20:37,621 - INFO - 127.0.0.1 - - [13/Apr/2025 18:20:37] "POST /register HTTP/1.1" 200 -
+2025-04-13 18:20:59,419 - INFO - New user registered: t2
+2025-04-13 18:20:59,419 - INFO - 127.0.0.1 - - [13/Apr/2025 18:20:59] "POST /register HTTP/1.1" 200 -
+2025-04-13 18:21:22,881 - INFO - User logged in: t2
+2025-04-13 18:21:22,882 - INFO - 127.0.0.1 - - [13/Apr/2025 18:21:22] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:21:28,983 - INFO - 127.0.0.1 - - [13/Apr/2025 18:21:28] "POST /upload HTTP/1.1" 200 -
+2025-04-13 18:21:33,817 - INFO - 127.0.0.1 - - [13/Apr/2025 18:21:33] "[31m[1mPOST /download HTTP/1.1[0m" 400 -
+2025-04-13 18:21:42,108 - INFO - 127.0.0.1 - - [13/Apr/2025 18:21:42] "POST /get_public_key HTTP/1.1" 200 -
+2025-04-13 18:21:42,146 - INFO - 127.0.0.1 - - [13/Apr/2025 18:21:42] "POST /download HTTP/1.1" 200 -
+2025-04-13 18:22:18,916 - INFO - User logged in: t
+2025-04-13 18:22:18,916 - INFO - 127.0.0.1 - - [13/Apr/2025 18:22:18] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:22:21,193 - INFO - Listed files for user: t
+2025-04-13 18:22:21,193 - INFO - 127.0.0.1 - - [13/Apr/2025 18:22:21] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 18:25:57,203 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 18:25:57,203 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-13 18:26:07,308 - INFO - User logged in: t2
+2025-04-13 18:26:07,308 - INFO - 127.0.0.1 - - [13/Apr/2025 18:26:07] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:26:11,403 - INFO - Listed files for user: t2
+2025-04-13 18:26:11,403 - INFO - 127.0.0.1 - - [13/Apr/2025 18:26:11] "POST /list_files HTTP/1.1" 200 -
+2025-04-13 18:26:21,978 - INFO - 127.0.0.1 - - [13/Apr/2025 18:26:21] "POST /get_public_key HTTP/1.1" 200 -
+2025-04-13 18:26:21,982 - INFO - 127.0.0.1 - - [13/Apr/2025 18:26:21] "POST /download HTTP/1.1" 200 -
+2025-04-13 18:26:22,090 - INFO - File 9 shared by t2 with t
+2025-04-13 18:26:22,091 - INFO - 127.0.0.1 - - [13/Apr/2025 18:26:22] "POST /share HTTP/1.1" 200 -
+2025-04-13 18:26:28,405 - INFO - User logged in: t
+2025-04-13 18:26:28,405 - INFO - 127.0.0.1 - - [13/Apr/2025 18:26:28] "POST /login HTTP/1.1" 200 -
+2025-04-13 18:26:30,234 - INFO - Listed files for user: t
+2025-04-13 18:26:30,234 - INFO - 127.0.0.1 - - [13/Apr/2025 18:26:30] "POST /list_files HTTP/1.1" 200 -

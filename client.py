@@ -68,35 +68,10 @@ class Client:
             print("Error: Please log in first")
             return
         file_id = input("Enter file ID: ")
+        # Call the download_file function from client_utils.py
         result = download_file(self.server_url, self.username, file_id)
-        if 'encrypted_content' in result and 'filename' in result and 'encrypted_key' in result:
-            private_key_file = f"{self.username}_private.pem"
-            if not os.path.exists(private_key_file):
-                print(f"Error: Private key not found (expected: {private_key_file})")
-                return
-            from cryptography.hazmat.primitives import serialization, hashes
-            from cryptography.hazmat.primitives.asymmetric import padding
-            from cryptography.fernet import Fernet
-            with open(private_key_file, 'rb') as f:
-                private_key = serialization.load_pem_private_key(f.read(), password=None)
-            try:
-                encrypted_key = base64.b64decode(result['encrypted_key'])
-                fernet_key = private_key.decrypt(
-                    encrypted_key,
-                    padding.OAEP(
-                        mgf=padding.MGF1(algorithm=hashes.SHA256()),
-                        algorithm=hashes.SHA256(),
-                        label=None
-                    )
-                )
-                fernet = Fernet(fernet_key)
-                decrypted_content = fernet.decrypt(result['encrypted_content'].encode())
-                filename = input(f"Enter filename to save as (default: {result['filename']}): ") or result['filename']
-                with open(filename, 'wb') as f:
-                    f.write(decrypted_content)
-                print(f"File saved as: {filename}")
-            except Exception as e:
-                print(f"Error: Failed to decrypt file - {str(e)}")
+        if 'message' in result:
+            print(result['message'])
         else:
             print(f"Error: {result.get('error_description', 'Download failed')}")
 

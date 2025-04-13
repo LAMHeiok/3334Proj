@@ -5,7 +5,8 @@ import base64
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import hashes
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet, InvalidToken
+
 
 def generate_key_pair(username):
     private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -129,14 +130,85 @@ def upload_file(server_url, username, filename):
     )
     return response.json()
 
-def download_file(server_url, username, file_id):
-    response = requests.post(
-        f"{server_url}/download",
-        json={"username": username, "file_id": file_id},
-    )
-    return response.json()
+def download_file(server_url, username, file_id, save_file=True):
+    try:
+        response = requests.post(
+            f"{server_url}/download",
+            json={"username": username, "file_id": file_id},
+        )
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"Request failed: {e}")
+        return {"error": "request_failed", "error_description": str(e)}
+
+    try:
+        result = response.json()
+    except requests.exceptions.JSONDecodeError as e:
+        print(f"JSON decode error: {e}")
+        print(f"Response content: {response.text}")
+        return {"error": "invalid_response", "error_description": "Server returned invalid JSON"}
+
+    if "error" in result:
+        return result
+
+    try:
+        encrypted_key = base64.b64decode(result["encrypted_key"])
+    except TypeError as e:
+        print(f"Failed to decode encrypted_key: {e}")
+        return {"error": "decoding_error", "error_description": "Failed to decode encrypted key"}
+
+    private_key_path = f"{username}_private.pem"
+    try:
+        with open(private_key_path, "rb") as f:
+            private_key = serialization.load_pem_private_key(f.read(), password=None)
+    except Exception as e:
+        print(f"Failed to load private key: {e}")
+        return {"error": "key_error", "error_description": "Failed to load private key"}
+
+    try:
+        fernet_key = private_key.decrypt(
+            encrypted_key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None,
+            ),
+        )
+    except Exception as e:
+        print(f"Decryption failed: {e}")
+        return {"error": "decryption_failed", "error_description": "Failed to decrypt Fernet key"}
+
+    try:
+        fernet = Fernet(fernet_key)
+        encrypted_content = base64.b64decode(result["encrypted_content"])
+        decrypted_content = fernet.decrypt(encrypted_content)
+    except Exception as e:
+        print(f"File decryption failed: {e}")
+        return {"error": "file_decryption_failed", "error_description": "Failed to decrypt file content"}
+
+    if save_file:
+        output_filename = result['filename']
+        try:
+            with open(output_filename, "wb") as f:
+                f.write(decrypted_content)
+            return {
+                'message': f'File downloaded and saved successfully as {output_filename}',
+                'filename': output_filename
+            }
+        except Exception as e:
+            print(f"Failed to save file: {e}")
+            return {"error": "file_save_failed", "error_description": f"Failed to save file: {str(e)}"}
+    else:
+        # Return data without saving for use in sharing
+        return {
+            'message': 'File data retrieved successfully',
+            'filename': result['filename'],
+            'encrypted_key': result['encrypted_key'],  # Base64-encoded string
+            'decrypted_content': decrypted_content  # For potential future use
+        }
 
 def share_file(server_url, username, file_id, shared_with):
+    # Get the target user's public key
     response = requests.post(
         f"{server_url}/get_public_key",
         json={"username": shared_with},
@@ -144,29 +216,51 @@ def share_file(server_url, username, file_id, shared_with):
     result = response.json()
     if "public_key" not in result:
         return result
-    public_key = serialization.load_pem_public_key(result["public_key"].encode())
-    with open(f"{username}_private.pem", "rb") as f:
-        private_key = serialization.load_pem_private_key(f.read(), password=None)
-    download_result = download_file(server_url, username, file_id)
-    if "encrypted_key" not in download_result:
+    try:
+        public_key = serialization.load_pem_public_key(result["public_key"].encode())
+    except Exception as e:
+        return {"error": "public_key_error", "error_description": f"Failed to load public key: {str(e)}"}
+
+    # Download the file's encrypted key (without saving the file)
+    download_result = download_file(server_url, username, file_id, save_file=False)
+    if "error" in download_result:
         return download_result
-    encrypted_key = base64.b64decode(download_result["encrypted_key"])
-    fernet_key = private_key.decrypt(
-        encrypted_key,
-        padding.OAEP(
-            mgf=padding.MGF1(algorithm=hashes.SHA256()),
-            algorithm=hashes.SHA256(),
-            label=None,
-        ),
-    )
-    encrypted_key_for_shared = public_key.encrypt(
-        fernet_key,
-        padding.OAEP(
-            mgf=padding.MGF1(algorithm=hashes.SHA256()),
-            algorithm=hashes.SHA256(),
-            label=None,
-        ),
-    )
+
+    # Load the owner's private key
+    try:
+        with open(f"{username}_private.pem", "rb") as f:
+            private_key = serialization.load_pem_private_key(f.read(), password=None)
+    except Exception as e:
+        return {"error": "private_key_error", "error_description": f"Failed to load private key: {str(e)}"}
+
+    # Decrypt the Fernet key
+    try:
+        encrypted_key = base64.b64decode(download_result["encrypted_key"])
+        fernet_key = private_key.decrypt(
+            encrypted_key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None,
+            ),
+        )
+    except Exception as e:
+        return {"error": "decryption_failed", "error_description": f"Failed to decrypt Fernet key: {str(e)}"}
+
+    # Re-encrypt the Fernet key for the shared_with user
+    try:
+        encrypted_key_for_shared = public_key.encrypt(
+            fernet_key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None,
+            ),
+        )
+    except Exception as e:
+        return {"error": "encryption_failed", "error_description": f"Failed to encrypt key for sharing: {str(e)}"}
+
+    # Send the share request
     response = requests.post(
         f"{server_url}/share",
         json={
@@ -176,7 +270,49 @@ def share_file(server_url, username, file_id, shared_with):
             "encrypted_key": base64.b64encode(encrypted_key_for_shared).decode(),
         },
     )
-    return response.json()
+    try:
+        return response.json()
+    except requests.exceptions.JSONDecodeError as e:
+        return {"error": "server_response_error", "error_description": f"Invalid server response: {str(e)}"}
+
+def decrypt_file(username, download_result, output_filename):
+    try:
+        # Load the private key
+        with open(f"{username}_private.pem", "rb") as f:
+            private_key = serialization.load_pem_private_key(f.read(), password=None)
+
+        # Extract and decode data from server response
+        encrypted_key = base64.b64decode(download_result["encrypted_key"])
+        encrypted_content = base64.b64decode(download_result["encrypted_content"])
+
+        # Decrypt the Fernet key
+        fernet_key = private_key.decrypt(
+            encrypted_key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None,
+            ),
+        )
+
+        # Decrypt the file content
+        fernet = Fernet(fernet_key)
+        decrypted_content = fernet.decrypt(encrypted_content)
+
+        # Save the decrypted file
+        with open(output_filename, "wb") as f:
+            f.write(decrypted_content)
+
+        return {"message": f"File decrypted and saved as {output_filename}"}
+
+    except FileNotFoundError:
+        return {"error": "private_key_not_found", "error_description": f"Private key file {username}_private.pem not found"}
+    except ValueError as e:
+        return {"error": "decryption_failed", "error_description": f"RSA decryption failed: {str(e)}"}
+    except InvalidToken:
+        return {"error": "decryption_failed", "error_description": "Fernet decryption failed: Invalid key or corrupted content"}
+    except Exception as e:
+        return {"error": "decryption_failed", "error_description": f"Unexpected error: {str(e)}"}
 
 def list_files(server_url, username):
     response = requests.post(
