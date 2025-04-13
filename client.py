@@ -15,14 +15,12 @@ import tkinter as tk
 from tkinter import filedialog
 import base64
 import pyotp
-from soft_webauthn import SoftWebauthnDevice  # Import soft-webauthn
 import json
 
 class Client:
     def __init__(self, server_url):
         self.server_url = server_url
         self.username = None
-        self.webauthn_device = SoftWebauthnDevice()  # Initialize soft authenticator
 
     def register(self):
         username = input("Enter username: ")
